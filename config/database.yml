@@ -50,5 +50,7 @@ test:
 production:
   <<: *default
   database: FesLive-app_production
-  username: FesLive-app
-  password: <%= ENV['FESLIVE-APP_DATABASE_PASSWORD'] %>
+  username: root
+  password: <%= ENV['DATABASE_PASSWORD'] %>
+  socket: /var/lib/mysql/mysql.sock
+  
