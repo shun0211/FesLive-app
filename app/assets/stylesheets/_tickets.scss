@@ -1,0 +1,19 @@
+.header{
+  width: 100%;
+  height: 130px;
+  &__main{
+    display: flex;
+    padding: 20px, 50px;
+    &__search{
+      width: 70%;
+    }
+    &__botton{
+      background-color: blue;
+    }
+  }
+  .botton__nav{
+    display: flex;
+    
+
+  }
+}
