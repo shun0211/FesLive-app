@@ -1,53 +1,161 @@
-.header{
-  max-width: 1040px;
-  width: 100%;
-  height: 130px;
-  &__main{
-    display: flex;
-    justify-content: center;
-    &__logo{
-      padding: 15px
+@mixin box{
+  height: 200px;
+  width: 200px;
+  background-color: #DDDDDD;
+}
+
+.contents{
+  font-family: "Avenir Next", Verdana, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "游ゴシック", "Yu Gothic", "メイリオ", Meiryo, Osaka, sans-serif;
+  .introduction{
+    height: 600px;
+    width: 100%;
+    background-image: url(フェス画像.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center; 
+    position: relative;
+    color: white;
+    text-shadow: 3px 3px #222222;
+    &__title{
+      font-size: 50px;
+      position: absolute;
+      top: 300px;
+      left: 40px;
     }
-    &__search{
-      line-height: 130px;
-      width: 70%;
-      height: 130px;
+    &__explanation{
+      font-size: 20px;
+      position: absolute;
+      top: 370px;
+      left: 40px;
+    }
+  }
+  .upcoming{
+    width: 100%;
+    height: 400px;
+    background-color: #1F1F1F;
+    text-align: center;
+    &__fes__title{
+      color: white;
+      font-size: 35px;
+      height: 40px;
+      line-height: 40px;
+      padding-top: 10px;
+    }
+    &__fes__box{
+      height: 330px;
       display: flex;
-      align-items: center;
-      &__form{
-        height: 40px;
-        width: calc(100% - 60px);
-        display: block;
-      }
-      &__button{
-        background-color: #333366;
-        margin-right: 10px;
-        color: white;
-        width: 40px;
-        height: 40px;
-        display: flex;
-        align-items: center;
-        .fa-search{
-          font-size: 20px;
-          padding-left: 10px; 
+      justify-content: space-around;
+      width: 75%;
+      margin: 0 auto;
+      padding-top: 20px;
+      text-align: center;
+      &__contents{
+        width: 200px;
+        &__title{
+          position: relative;
+          height: 200px;
+          width: 200px;
+          background-color: #DDDDDD;;
+          &__logo{
+            height: calc(100% - 20px);
+            display: flex;
+            align-items: center;
+            .logo__image{
+              width: 100%;
+              height: 100%;
+              object-fit: contain;
+            }
+          }
+          .official_site__link{
+            height: 20px;
+            width: 100%;
+            position: absolute;
+            bottom: 0px;
+            line-height: 20px;
+            background-color: white;
+            a{
+              text-decoration: none;
+              color: black;
+              font-size: 15px;
+            }
+          }
+        }
+        &__information{
+          width: 100%;
+          height: 115px;
+          color: white;
+          font-size: 13px;
+          overflow-wrap: normal;
+          padding-top: 15px;
+          text-align: left;
         }
       }
     }
   }
-  .button__nav{
-    display: flex;
+  .closed{
     width: 100%;
-    height: 30px;
-    background-color: #333366;
-    justify-content: flex-end;
-    font-size: 13px;
-    color: white;
-    line-height: 30px;
-    &__logout{
-      padding-right: 30px
+    height: 420px;
+    background-color: #DDDDDD;
+    text-align: center;
+    &__fes__title{
+      color: #1F1F1F;
+      font-size: 35px;
+      height: 40px;
+      line-height: 40px;
+      padding-top: 10px;
     }
-    &__mypage{
-      padding-right: 30px;
+    &__fes__box{
+      height: 330px;
+      display: flex;
+      justify-content: space-around;
+      width: 75%;
+      margin: 0 auto;
+      padding-top: 20px;
+      text-align: center;
+      &__contents{
+        width: 200px;
+        &__title{
+          position: relative;
+          height: 200px;
+          width: 200px;
+          background-color: #1F1F1F;
+          &__logo{
+            height: calc(100% - 20px);
+            display: flex;
+            align-items: center;
+            .logo__image{
+              width: 100%;
+              height: 100%;
+              object-fit: contain;
+            }
+          }
+          .official_site__link{
+            height: 20px;
+            width: 100%;
+            position: absolute;
+            bottom: 0px;
+            line-height: 20px;
+            background-color: white;
+            a{
+              text-decoration: none;
+              color: black;
+              font-size: 15px;
+            }
+          }
+        }
+        &__information{
+          width: 100%;
+          height: 115px;
+          color: #1F1F1F;
+          font-size: 13px;
+          overflow-wrap: normal;
+          padding-top: 15px;
+          text-align: left;
+        }
+      }
     }
   }
 }
+
+
+

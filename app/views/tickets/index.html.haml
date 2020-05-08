@@ -7,9 +7,97 @@
     .introduction__explanation
       邦ロック好きのためのまとめアプリ
   .upcoming
-
+    .upcoming__fes__title
+      Upcoming Soon...
+    .upcoming__fes__box
+      .upcoming__fes__box__contents
+        .upcoming__fes__box__contents__title
+          .upcoming__fes__box__contents__title__logo
+            = image_tag "rockinjapanlogo.jpg", class: "logo__image"
+          .official_site__link
+            = link_to "公式サイト", "http://rijfes.jp/"
+        .upcoming__fes__box__contents__information
+          開催日：8月9日、10日、11日
+          %br
+          場所  ：茨城県ひたちなか市
+          %br
+          主な出演アーティスト
+          %br
+          サンボマスター、きゃりーぱみゅぱみゅ、緑黄色野菜 and more...
+      .upcoming__fes__box__contents
+        .upcoming__fes__box__contents__title
+          .upcoming__fes__box__contents__title__logo
+            = image_tag "fujirock_logo.png", class: "logo__image"
+          .official_site__link
+            = link_to "公式サイト", "https://www.fujirockfestival.com/"
+        .upcoming__fes__box__contents__information
+          開催日：8月21日、22日、23日
+          %br
+          場所  ：新潟県湯沢町
+          %br
+          主な出演アーティスト
+          %br
+          TAME IMPALA、THE STROKES、Rock’n’Roll FOREVER and more...
+      .upcoming__fes__box__contents
+        .upcoming__fes__box__contents__title
+          .upcoming__fes__box__contents__title__logo
+            = image_tag "sweet_love_shower_logo.jpg", class: "logo__image"
+          .official_site__link
+            = link_to "公式サイト", "https://www.sweetloveshower.com/2020/"
+        .upcoming__fes__box__contents__information
+          開催日：8月28日、29日、30日
+          %br
+          場所  ：山梨県南都留郡
+          %br
+          主な出演アーティスト
+          %br
+          Upcoming Soon...
   .closed
-
-
-.footer
-
+    .closed__fes__title
+      開催中、終演したフェス
+    .closed__fes__box
+      .closed__fes__box__contents
+        .closed__fes__box__contents__title
+          .closed__fes__box__contents__title__logo
+            = image_tag "metrock_logo.jpg", class: "logo__image"
+          .official_site__link
+            = link_to "公式サイト", "http://metrock.jp/"
+        .closed__fes__box__contents__information
+          開催日：5月16日、17日（大阪）5月24日、25日（東京）
+          %br
+          場所：大阪府堺市、東京都江東区
+          %br
+          主な出演アーティスト
+          %br
+          WANIMA、[Alexandros]、BiSH and more...
+      .closed__fes__box__contents
+        .closed__fes__box__contents__title
+          .closed__fes__box__contents__title__logo
+            = image_tag "yonfes_logo.jpg", class: "logo__image"
+          .official_site__link
+            = link_to "公式サイト", "https://yonfes.nagoya/2020/"
+        .closed__fes__box__contents__information
+          開催日：4月4日、5日
+          %br
+          場所：愛知県長久手市
+          %br
+          主な出演アーティスト
+          %br
+          04limited sazabys、go!go!vanillas、SUPER BEAVER and more...
+      .closed__fes__box__contents
+        .closed__fes__box__contents__title
+          .closed__fes__box__contents__title__logo
+            = image_tag "merry_rock_parade_logo.png", class: "logo__image"
+          .official_site__link
+            = link_to "公式サイト", "https://www.merryrockparade.jp/"
+        .closed__fes__box__contents__information
+          開催日：12月21日、22日
+          %br
+          場所：愛知県名古屋市
+          %br
+          主な出演アーティスト
+          %br
+          [Alexandros]、sumika、フレデリック and more...
+.top_footer
+  = render partial: "shared/footer"
+  

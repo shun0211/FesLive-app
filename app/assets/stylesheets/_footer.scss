@@ -1,0 +1,68 @@
+.footer{
+  width: 100%;
+  height: 350px;
+  background-color: #1F1F1F;
+  position: relative;
+  &__main{
+    padding: 60px 150px 30px;
+    height: 260px;
+    &__contents{
+      text-align: center;
+      display: flex;
+      justify-content: space-around;
+      &__information{
+        height: 170px;
+        width: 30%;
+        &__title{
+          color: white;
+          font-size: 15px;
+          font-weight: bold;
+        }
+        &__content{
+          color: white;
+          font-size: 13px;
+          padding-top: 15px;
+        }
+      }
+    }
+    .footer__bottom{
+      height: 90px;
+      width: 100%;
+      color: white;
+      .app{
+        display: flex;
+        justify-content: center;
+        height: 60px;
+        align-items: center;
+        &_name{
+          font-size: 17px;
+          font-weight: bold;
+          line-height: 60px;
+          padding: 0 10px 0 10px;
+        }
+      }
+      .copyright{
+        text-align: center;
+        height: 20px;
+        font-size: 13px;
+        padding-top: 10px;
+        line-height: 20px;
+      }
+    }
+  }
+  .set_list__button{
+    width: 120px;
+    height: 75px;
+    position: fixed;
+    right: 40px;
+    bottom: 30px;
+    font-size: 30px;
+    border-radius: 10px;
+    border: 1px solid;
+    border-color: #1F1F1F;
+    font-weight: bold;
+    &__guide{
+      font-size: 13px;
+    }
+  }
+}
