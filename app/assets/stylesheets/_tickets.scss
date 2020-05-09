@@ -1,19 +1,161 @@
-.header{
-  width: 100%;
-  height: 130px;
-  &__main{
-    display: flex;
-    padding: 20px, 50px;
-    &__search{
-      width: 70%;
+@mixin box{
+  height: 200px;
+  width: 200px;
+  background-color: #DDDDDD;
+}
+
+.contents{
+  font-family: "Avenir Next", Verdana, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "游ゴシック", "Yu Gothic", "メイリオ", Meiryo, Osaka, sans-serif;
+  .introduction{
+    height: 600px;
+    width: 100%;
+    background-image: url(フェス画像.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center; 
+    position: relative;
+    color: white;
+    text-shadow: 3px 3px #222222;
+    &__title{
+      font-size: 50px;
+      position: absolute;
+      top: 300px;
+      left: 40px;
     }
-    &__botton{
-      background-color: blue;
+    &__explanation{
+      font-size: 20px;
+      position: absolute;
+      top: 370px;
+      left: 40px;
     }
   }
-  .botton__nav{
-    display: flex;
-    
-
+  .upcoming{
+    width: 100%;
+    height: 400px;
+    background-color: #1F1F1F;
+    text-align: center;
+    &__fes__title{
+      color: white;
+      font-size: 35px;
+      height: 40px;
+      line-height: 40px;
+      padding-top: 10px;
+    }
+    &__fes__box{
+      height: 330px;
+      display: flex;
+      justify-content: space-around;
+      width: 75%;
+      margin: 0 auto;
+      padding-top: 20px;
+      text-align: center;
+      &__contents{
+        width: 200px;
+        &__title{
+          position: relative;
+          height: 200px;
+          width: 200px;
+          background-color: #DDDDDD;;
+          &__logo{
+            height: calc(100% - 20px);
+            display: flex;
+            align-items: center;
+            .logo__image{
+              width: 100%;
+              height: 100%;
+              object-fit: contain;
+            }
+          }
+          .official_site__link{
+            height: 20px;
+            width: 100%;
+            position: absolute;
+            bottom: 0px;
+            line-height: 20px;
+            background-color: white;
+            a{
+              text-decoration: none;
+              color: black;
+              font-size: 15px;
+            }
+          }
+        }
+        &__information{
+          width: 100%;
+          height: 115px;
+          color: white;
+          font-size: 13px;
+          overflow-wrap: normal;
+          padding-top: 15px;
+          text-align: left;
+        }
+      }
+    }
+  }
+  .closed{
+    width: 100%;
+    height: 420px;
+    background-color: #DDDDDD;
+    text-align: center;
+    &__fes__title{
+      color: #1F1F1F;
+      font-size: 35px;
+      height: 40px;
+      line-height: 40px;
+      padding-top: 10px;
+    }
+    &__fes__box{
+      height: 330px;
+      display: flex;
+      justify-content: space-around;
+      width: 75%;
+      margin: 0 auto;
+      padding-top: 20px;
+      text-align: center;
+      &__contents{
+        width: 200px;
+        &__title{
+          position: relative;
+          height: 200px;
+          width: 200px;
+          background-color: #1F1F1F;
+          &__logo{
+            height: calc(100% - 20px);
+            display: flex;
+            align-items: center;
+            .logo__image{
+              width: 100%;
+              height: 100%;
+              object-fit: contain;
+            }
+          }
+          .official_site__link{
+            height: 20px;
+            width: 100%;
+            position: absolute;
+            bottom: 0px;
+            line-height: 20px;
+            background-color: white;
+            a{
+              text-decoration: none;
+              color: black;
+              font-size: 15px;
+            }
+          }
+        }
+        &__information{
+          width: 100%;
+          height: 115px;
+          color: #1F1F1F;
+          font-size: 13px;
+          overflow-wrap: normal;
+          padding-top: 15px;
+          text-align: left;
+        }
+      }
+    }
   }
 }
+
+
+

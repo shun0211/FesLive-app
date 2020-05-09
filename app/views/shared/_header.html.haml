@@ -4,10 +4,11 @@
       = link_to image_tag("ROCK LOVE HOUSE.png", size: "100x100", class: "logo"), root_path
     %form.header__main__search
       %input.header__main__search__form{name: "search", type: "text", placeholder: "イベント名、アーティスト名を入力して検索！"}
-      %input.header__main__search__botton{type: "submit", value: "検索"}
-  .botton__nav
-    .botton__nav__logout
+      %botton.header__main__search__button
+        %i.fas.fa-search
+  .button__nav
+    .button__nav__logout
       ログアウト
-    .botton__nav__mypage
+    .button__nav__mypage
       マイページ
     
