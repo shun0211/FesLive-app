@@ -44,10 +44,32 @@
     color: white;
     line-height: 30px;
     &__logout{
-      padding-right: 30px
+      padding-right: 30px;
+      .logout__button{
+        color: white;
+        text-decoration: none;
+      }
     }
     &__mypage{
       padding-right: 30px;
+      .mypage__button{
+        color: white;
+        text-decoration: none;
+      }
+    }
+    &__login{
+      padding-right: 30px;
+      .login__button{
+        color: white;
+        text-decoration: none;
+      }
+    }
+    &__new_user_registration{
+      padding-right: 30px;
+      .new_user_registration__button{
+        color: white;
+        text-decoration: none;
+      }
     }
   }
 }

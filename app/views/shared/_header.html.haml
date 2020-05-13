@@ -7,8 +7,14 @@
       %botton.header__main__search__button
         %i.fas.fa-search
   .button__nav
-    .button__nav__logout
-      ログアウト
-    .button__nav__mypage
-      マイページ
+    - if user_signed_in?
+      .button__nav__logout
+        = link_to "ログアウト", destroy_user_session_path, class: "logout__button", method: :delete
+      .button__nav__mypage
+        = link_to "マイページ", "#", class: "mypage__button"
+    - else
+      .button__nav__login
+        = link_to "ログイン", new_user_session_path, class: "login__button"
+      .button__nav__new_user_registration
+        = link_to "新規登録", new_user_registration_path , class: "new_user_registration__button"
     

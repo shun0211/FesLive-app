@@ -1,0 +1,43 @@
+= render partial: "shared/simple_header"
+
+.new_user_registration__screen
+  .new_user_registration__screen__title
+    .new_user_registration__screen__title__explanation
+      メンバー登録
+    .new_user_registration__screen__title__attention
+      以下の項目にご記入の上、「登録する」ボタンを押してください。
+  .input__form
+    = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+      .input__form__nickname
+        .input__form__nickname__title
+          ニックネーム
+          %span.required
+            必須
+        .input__form__nickname__form
+          = f.text_field :nickname, placeholder: "タロウ", class: "nickname__form"
+      .input__form__email
+        .input__form__email__title
+          メールアドレス
+          %span.required
+            必須
+        .input__form__email__form
+          = f.email_field :email, placeholder: "xxx@example.jp", class: "email__form"
+      .input__form__password
+        .input__form__password__title
+          パスワード
+          %span.required
+            必須
+        .input__form__password__form
+          = f.text_field :password, placeholder: "6文字以上入力してください", class: "password__form"
+      .input__form__password_conformation
+        .input__form__password_conformation__title
+          パスワード（確認）
+          %span.required
+            必須
+        .input__form__password_conformation__form
+          = f.text_field :password_confirmation, placeholder: "もう一度パスワードを入力して下さい", class: "password_conformation__form"
+      .new_user_registration__button
+        = f.submit "登録する", class: "registration__button"
+    = render "devise/shared/error_messages", resource: resource
+
+= render partial: "shared/footer"

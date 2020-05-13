@@ -1,9 +1,11 @@
 Rails.application.routes.draw do
   
-  devise_for :users
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  devise_for :users, controllers: {
+    registrations: "users/registrations",
+    sessions: "users/sessions"
+  }
   
-  resources :tickets, only: [:index]
-
+  resources :tickets, only: [:index, :new, :create]
+  resources :set_lists, only: [:index, :new, :create]
   root "tickets#index"
 end

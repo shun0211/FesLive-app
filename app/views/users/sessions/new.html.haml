@@ -1,0 +1,26 @@
+= render partial: "shared/simple_header"
+
+.login__screen
+  .login__screen__title
+    .login__screen__title__explanation
+      ログイン画面
+  .input__form
+    .guide
+      .guide__first__time__use
+        初めてご利用の方はこちらへ
+      .guide__link
+        = link_to new_user_registration_path, class: "new_user_registration__button" do
+          %i.far.fa-envelope
+          %span
+            新規ご登録画面
+    = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+      .input__form__email
+        = f.email_field :email, placeholder: "ご登録頂いたメールアドレス", class: "email__form"
+      .input__form__password
+        = f.text_field :password, placeholder: "パスワード", class: "password__form"
+      .login__button
+        = f.submit "ログイン", class: "login__button"
+      .for__forget__password   
+        = link_to "パスワードをお忘れの方", "#"  
+
+= render partial: "shared/footer"
