@@ -5,7 +5,7 @@ Rails.application.routes.draw do
     sessions: "users/sessions"
   }
   
-  resources :tickets, only: [:index]
-
+  resources :tickets, only: [:index, :new, :create]
+  resources :set_lists, only: [:index, :new, :create]
   root "tickets#index"
 end
