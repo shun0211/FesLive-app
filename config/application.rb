@@ -13,6 +13,7 @@ module FesLiveApp
       g.javascripts false
       g.helper false
       g.test_framework false
+      # config.autoload_paths += Dir[Rails.root.join('app', 'uploaders')]
     end
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers

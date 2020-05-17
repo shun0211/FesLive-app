@@ -1,0 +1,52 @@
+.main__container{
+  font-family: "Avenir Next", Verdana, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "游ゴシック", "Yu Gothic", "メイリオ", Meiryo, Osaka, sans-serif;
+  background-color: #f5f5f5;
+  font-size: 15px;
+  padding-bottom: 20px;
+  .explanation__box{
+    text-align: center;
+    .set_list__post__title{
+      font-size: 25px;
+      padding-top: 20px;
+    }
+    .set_list__post__explanation{
+      padding-top: 20px;
+      padding-bottom: 15px;
+    }
+  }
+  .listing__box{
+    .event__list{
+      .event__box{
+        height: 120px;
+        margin: 0 20% 0 20%;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        display: flex;
+        align-items: center;
+        border-top: 0.5px dashed #1F1F1F;
+        .event__left__box{
+          background-color: white;
+          display: flex;
+          align-items: center;
+          height: 100px;
+          width: 100px;
+        }
+        .event__right__box{
+          width: 80%;
+          padding-left: 25px;
+          .event__name{
+            text-decoration: none;
+            color: black;
+            font-size: 20px;
+            font-weight: bold;
+          }
+          .performing_artist{
+            &__explanation{
+              font-size: 13px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
