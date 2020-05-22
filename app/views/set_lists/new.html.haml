@@ -11,6 +11,7 @@
 
   .new__set_list__post__form
     = form_for @set_list, html: { name: "new_set_list" } do |f|
+      .error_messages_box
       .post__artist__form
         .post__artist__form__title
           アーティスト名

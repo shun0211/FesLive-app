@@ -8,12 +8,11 @@ class SetListsController < ApplicationController
 
   def create
     @set_list = SetList.new(set_list_params)
-    binding.pry
     respond_to do |format|
       if @set_list.valid?
         @set_list.save
         format.html { redirect_to root_path }
-        format.html { render json: @set_list.errors.full_messages }
+        format.json { render json: @set_list.errors.full_messages }
       else
         format.json { render json: @set_list.errors.full_messages }
       end
