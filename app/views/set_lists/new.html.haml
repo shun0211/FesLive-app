@@ -7,17 +7,17 @@
     .new__set_list__post__header__event_name
       = @event.event_name
     .new__set_list__post__header__explanation
-      以下にアーティスト名と曲順を記載下さい
+      以下にアーティスト名と曲名を記載下さい
 
   .new__set_list__post__form
-    = form_for @set_list do |f|
+    = form_for @set_list, html: { name: "new_set_list" } do |f|
       .post__artist__form
         .post__artist__form__title
           アーティスト名
           %span.required
             必須
         .post__artist__form__box
-          = f.text_field :artist, placeholder: "投稿するアーティスト名を入力して下さい", class: "post__artist__form"
+          = f.text_field :artist, placeholder: "投稿するアーティスト名を入力して下さい", class: "artist__form"
       .set_list__form
         .set_list__form__first
           .set_list__form__first__title
@@ -71,7 +71,9 @@
             １０曲目
           .set_list__form__tenth__box
             = f.text_field :tenth_song, placeholder: "１０曲目を記入して下さい", class: "tenth_song__form"
-      %post__button
-        投稿する
+      .set_list__post__button
+        %button.post__button{ type: "button" }
+          投稿する
+    
 
 = render partial: "shared/footer"

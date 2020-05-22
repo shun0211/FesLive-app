@@ -1,0 +1,9 @@
+ja:
+  activerecord:
+    medels:
+      set_list: セットリスト
+    attributes:
+      set_list:
+        artist: アーティスト名
+        first_song: 一曲目
+        
