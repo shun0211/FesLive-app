@@ -10,7 +10,9 @@ Rails.application.routes.draw do
   resources :events, only: [:index] do
     member do
       get "choise_artist"
-      resources :set_lists, only: [:new, :create, :show]
+      resources :set_lists, only: [:new, :create, :show] do
+        resource :likes, only: [:create, :destroy]
+      end
     end
   end
 

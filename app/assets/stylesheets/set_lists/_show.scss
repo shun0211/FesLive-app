@@ -1,0 +1,91 @@
+.set_list__content{
+  text-align: center;
+  width: 100%;
+  font-family: "Avenir Next", Verdana, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "游ゴシック", "Yu Gothic", "メイリオ", Meiryo, Osaka, sans-serif;
+  font-size: 15px;
+  background-color: #EEEEEE;
+  .main__content{
+    display: flex;
+    .left__box{
+      width: 22%;
+      position: relative;
+      .contributor__box{
+        position: absolute;
+        top: 40px;
+        right: 0;
+        .contributor__icon{
+          height: 100px;
+          width: 100px;
+          background-color: yellow;
+          margin: 0 auto;
+        }
+        .contributor__nickname{
+          font-size: 13px;
+          padding-top: 10px;
+        }
+      }
+      .button__box{
+        display: flex;
+        width: 100px;
+        position: absolute;
+        bottom: 10px;
+        right: 20px;
+  
+        a{
+          text-decoration: none;
+          .like__box{
+            display: flex;
+            color: #FF82B2	;
+          
+            text-decoration: none;
+            .heart__mark__registered{
+              text-decoration: none;
+            }
+            .like__number{
+              text-decoration: none;
+            }
+          }
+        }
+        .twitter__box{
+          color: #4689FF;
+        }
+      }
+    }
+    .posted__set_list{
+      margin-right: 20%;
+      width: 80%;
+      padding: 20px 0 20px;
+      .posted__set_list__title{
+        padding-bottom: 20px;
+        .event__name{
+          font-size: 20px;
+        }
+        .artist__name{
+          font-size: 25px;
+        }
+      }
+      .posted__set_list__contents{
+        .song{
+          height: 40px;
+          font-size: 20px;
+          display: flex;
+          line-height: 40px;
+          padding: 0.5em 1em;
+          margin: 1em 50px;
+          color: #5d627b;
+          background: white;
+          border-top: solid 3px #1f1f1f;
+          box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22);
+          border-radius: 5px;
+          &__number{
+            padding-left: 10px;
+            font-size: 17px;
+          }
+          &__name{
+            margin: 0 auto;
+          }
+        }
+      }
+    }
+  }
+}

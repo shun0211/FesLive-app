@@ -20,6 +20,8 @@ class SetListsController < ApplicationController
   end
 
   def show
+    @event = Event.find(params[:id])
+    @set_list = SetList.find(params[:id])
   end
 
   private
@@ -28,6 +30,7 @@ class SetListsController < ApplicationController
       :event_id,
       :artist,
       :first_song,
+      :second_song,
       :third_song,
       :fourth_song,
       :fifth_song,

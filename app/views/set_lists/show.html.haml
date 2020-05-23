@@ -1,1 +1,105 @@
-set_listsコントローラーのshowアクションだよ
+= render partial: "shared/header"
+
+.set_list__content
+  .main__content
+    .left__box
+      .contributor__box
+        .contributor__icon
+          投稿者のアイコン
+        .contributor__nickname
+          投稿者のニックネーム
+      .button__box
+        - if user_signed_in?
+          - if @set_list.liked_by?(current_user)
+            = link_to set_list_likes_path(@event, @set_list), method: :delete do
+              .like__box
+                .heart__mark__unregistered
+                  &#9829
+                .like__number
+                  = @set_list.likes.count
+          - else
+            = link_to set_list_likes_path(@event, @set_list), method: :post do
+              .like__box
+                .heart__mark__registered
+                  変わっているよ
+                .like__number
+                  = @set_list.likes.count
+        - else
+          .button__box
+            .heart__mark__registered
+              &#9829
+            .like__number
+              = @set_list.likes.count
+        .twitter__box
+          %i.fab.fa-twitter
+    .posted__set_list
+      .posted__set_list__title
+        .event__name
+          = @event.event_name
+        .artist__name
+          = @set_list.artist + "のセットリスト"
+      .posted__set_list__contents
+        .song#first_song
+          .song__number
+            1.
+          .song__name
+            = @set_list.first_song
+        - unless @set_list.second_song.blank?
+          .song#second_song
+            .song__number
+              2.
+            .song__name
+              = @set_list.second_song
+        - unless @set_list.third_song.blank?
+          .song#third_song
+            .song__number
+              3.
+            .song__name
+              = @set_list.third_song
+        - unless @set_list.fourth_song.blank?
+          .song#fourth_song
+            .song__number
+              4.
+            .song__name
+              = @set_list.fourth_song
+        - unless @set_list.fifth_song.blank?
+          .song#fifth_song
+            .song__number
+              5.
+            .song__name
+              = @set_list.fifth_song
+        - unless @set_list.sixth_song.blank?
+          .song#sixth_song
+            .song__number
+              6.
+            .song__name
+              = @set_list.sixth_song
+        - unless @set_list.seventh_song.blank?
+          .song#seventh_song
+            .song__number
+              7.
+            .song__name
+              = @set_list.seventh_song
+        - unless @set_list.eighth_song.blank?
+          .song#eighth_song
+            .song__number
+              8.
+            .song__name
+              = @set_list.eighth_song
+        - unless @set_list.ninth_song.blank?
+          .song#ninth_song
+            .song__number
+              9.
+            .song__name
+              = @set_list.ninth_song
+        - unless @set_list.tenth_song.blank?
+          .song#tenth_song
+            .song__number
+              10.
+            .song__name
+              = @set_list.tenth_song
+  .comment__content
+    .comment__form
+      = form_for 
+      
+= render partial: "shared/footer"
