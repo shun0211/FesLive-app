@@ -22,6 +22,8 @@ class SetListsController < ApplicationController
   def show
     @event = Event.find(params[:id])
     @set_list = SetList.find(params[:id])
+    @comment = Comment.new
+    @comments = @set_list.comments
   end
 
   private

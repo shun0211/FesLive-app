@@ -5,9 +5,9 @@
     .left__box
       .contributor__box
         .contributor__icon
-          投稿者のアイコン
+          = image_tag "sample_icon.JPG", class: "sample_icon"
         .contributor__nickname
-          投稿者のニックネーム
+          さかい
       .button__box
         - if user_signed_in?
           - if @set_list.liked_by?(current_user)
@@ -21,7 +21,7 @@
             = link_to set_list_likes_path(@event, @set_list), method: :post do
               .like__box
                 .heart__mark__registered
-                  変わっているよ
+                  &#9829
                 .like__number
                   = @set_list.likes.count
         - else
@@ -98,8 +98,21 @@
               10.
             .song__name
               = @set_list.tenth_song
-  .comment__content
-    .comment__form
-      = form_for 
-      
+  .comment__box
+    .comment__contents
+      - @comments.each do |comment|
+        .comment__posted
+          .comment__posted__information
+            .comment__user__nickname
+              = comment.user.nickname
+            .comment__post__time
+              = comment.created_at.strftime("%Y年%m月%d日 %H:%M")
+          .comment__posted__content
+            = comment.content
+    .comment__form__box
+      = form_for [@set_list, @comment], url: {controller: 'comments', action: 'create', set_list_id: '1'} do |f|
+        = f.text_field :content, placeholder: "コメントを入力して下さい", class: "comment__form"
+        = f.button type: 'button', class: "post__button", onclick: 'sumbit()' do
+          %i.far.fa-comment
+
 = render partial: "shared/footer"

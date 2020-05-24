@@ -4,6 +4,7 @@
   font-family: "Avenir Next", Verdana, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "游ゴシック", "Yu Gothic", "メイリオ", Meiryo, Osaka, sans-serif;
   font-size: 15px;
   background-color: #EEEEEE;
+  padding-bottom: 30px;
   .main__content{
     display: flex;
     .left__box{
@@ -16,8 +17,14 @@
         .contributor__icon{
           height: 100px;
           width: 100px;
-          background-color: yellow;
+          background-color: white;
           margin: 0 auto;
+          border: 1px solid #1f1f1f;
+          .sample_icon{
+            height: 100%;
+            width: 100%;
+            object-fit: contain;
+          }
         }
         .contributor__nickname{
           font-size: 13px;
@@ -26,28 +33,30 @@
       }
       .button__box{
         display: flex;
-        width: 100px;
+        width: 65px;
+        height: 25px;
         position: absolute;
         bottom: 10px;
-        right: 20px;
-  
+        right: 0;
+        justify-content: center;
+        background-color: white;
+        border-radius: 5px;
+        box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22);
         a{
           text-decoration: none;
+          
           .like__box{
             display: flex;
             color: #FF82B2	;
-          
-            text-decoration: none;
             .heart__mark__registered{
-              text-decoration: none;
             }
             .like__number{
-              text-decoration: none;
             }
           }
         }
         .twitter__box{
           color: #4689FF;
+          padding-left: 10px;
         }
       }
     }
@@ -84,6 +93,55 @@
           &__name{
             margin: 0 auto;
           }
+        }
+      }
+    }
+  }
+  .comment__box{
+    margin: 15px 15% 0;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22);
+    .comment__contents{
+      width: 80%;
+      margin: 0 auto;
+      padding-top: 20px;
+      .comment__posted{
+        padding-bottom: 20px;
+        &__information{
+          display: flex;
+          .comment__user__nickname{
+            font-size: 15px;
+          }
+          .comment__post__time{
+            color: #808080;
+            font-size: 10px;
+            padding-left: 10px;
+          }
+        }
+        &__content{
+          text-align: left;
+          padding-top: 15px
+        }
+      }
+    }
+    .comment__form__box{
+      padding: 20px 0 30px;
+      position: relative;
+      margin: 0 10% 0;
+      text-align: left;
+      .comment__form{
+        width: calc(100% - 65px);
+        height: 40px;
+      }
+      .post__button{
+        width: 60px;
+        height: 40px;
+        position: absolute;
+        bottom: 32px;
+        margin-left: 5px;
+        .fa-comment{
+          font-size: 30px;
         }
       }
     }
