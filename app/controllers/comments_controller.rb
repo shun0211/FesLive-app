@@ -7,8 +7,11 @@ class CommentsController < ApplicationController
     @comment = Comment.new(comment_params)
     @comment.user_id = current_user.id
     @comment.set_list_id = params[:set_list_id]
-    if @comment.save
-      redirect_to :back
+    respond_to do |format|
+      if @comment.save
+        format.html { redirect_to :back }
+        format.json
+      end
     end
   end
 

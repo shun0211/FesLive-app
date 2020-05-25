@@ -112,7 +112,7 @@
     .comment__form__box
       = form_for [@set_list, @comment], url: {controller: 'comments', action: 'create', set_list_id: '1'} do |f|
         = f.text_field :content, placeholder: "コメントを入力して下さい", class: "comment__form"
-        = f.button type: 'button', class: "post__button", onclick: 'sumbit()' do
+        = f.button type: "submit", class: "comment__post__button" do
           %i.far.fa-comment
 
 = render partial: "shared/footer"
