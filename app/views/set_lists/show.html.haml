@@ -107,25 +107,29 @@
             削除
   .comment__box
     .comment__contents
-      - @comments.each do |comment|
-        .comment__posted{data: {comment_id: "#{comment.id}"}}
-          .comment__posted__information
-            .comment__user__nickname
-              = comment.user.nickname
-            .comment__post__time
-              = comment.created_at.strftime("%Y年%m月%d日 %H:%M")
-          .comment__posted__box
-            .comment__posted__content
-              = comment.content
-            - if current_user.id == comment.user_id 
-              %button.comment__delete__button
-                %i.far.fa-trash-alt
+      - if @comments.length == 0
+        .comment__empty
+          まだコメントが投稿されていません。
+      - else
+        - @comments.each do |comment|
+          .comment__posted{data: {comment_id: "#{comment.id}"}}
+            .comment__posted__information
+              .comment__user__nickname
+                = comment.user.nickname
+              .comment__post__time
+                = comment.created_at.strftime("%Y年%m月%d日 %H:%M")
+            .comment__posted__box
+              .comment__posted__content
+                = comment.content
+              - if user_signed_in? && current_user.id == comment.user_id 
+                %button.comment__delete__button
+                  %i.far.fa-trash-alt
     .comment__form__box
-      = form_for [@set_list, @comment], url: {controller: 'comments', action: 'create', set_list_id: '1'} do |f|
-        = f.text_field :content, placeholder: "コメントを入力して下さい", class: "comment__form"
-        = f.hidden_field :set_list_id, value: @set_list.id
-        = f.button type: "submit", class: "comment__post__button" do
-          %i.far.fa-comment
-
+      - if user_signed_in?
+        = form_for [@set_list, @comment], url: {controller: 'comments', action: 'create', set_list_id: '1'} do |f|
+          = f.text_field :content, placeholder: "コメントを入力して下さい", class: "comment__form"
+          = f.hidden_field :set_list_id, value: @set_list.id
+          = f.button type: "submit", class: "comment__post__button" do
+            %i.far.fa-comment
 = render partial: "shared/footer"
 

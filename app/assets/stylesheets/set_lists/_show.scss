@@ -140,6 +140,9 @@
       width: 80%;
       margin: 0 auto;
       padding-top: 20px;
+      .comment__empty{
+        color: #5d627b;
+      }
       .comment__posted{
         padding-bottom: 20px;
         &__information{

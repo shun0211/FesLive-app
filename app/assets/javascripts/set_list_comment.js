@@ -37,6 +37,7 @@ $(function(){
       $('.comment__contents').append(comment_html);
       $('.comment__form').val("");
       $('.comment__post__button').prop("disabled", false);
+      $('.comment__empty').remove();
     })
   })
    
