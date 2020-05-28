@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200523223616) do
+ActiveRecord::Schema.define(version: 20200526051913) do
 
   create_table "comments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "content"
@@ -56,7 +56,9 @@ ActiveRecord::Schema.define(version: 20200523223616) do
     t.string   "tenth_song"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
+    t.integer  "user_id"
     t.index ["event_id"], name: "index_set_lists_on_event_id", using: :btree
+    t.index ["user_id"], name: "index_set_lists_on_user_id", using: :btree
   end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -76,4 +78,5 @@ ActiveRecord::Schema.define(version: 20200523223616) do
   add_foreign_key "comments", "users"
   add_foreign_key "likes", "set_lists"
   add_foreign_key "likes", "users"
+  add_foreign_key "set_lists", "users"
 end

@@ -1,6 +1,6 @@
 $(function(){
   function buildHTML(comment){
-    var html = `<div class = "comment__posted">
+    var html = `<div class = "comment__posted" data-comment-id = "${comment.id}">
                   <div class = "comment__posted__information">
                     <div class = "comment__user__nickname">
                       ${comment.user_nickname}
@@ -9,8 +9,13 @@ $(function(){
                       ${comment.created_at}
                     </div>
                   </div>
-                  <div class = "comment__posted__content">
-                    ${comment.content}
+                  <div class = "comment__posted__box">
+                    <div class = "comment__posted__content">
+                      ${comment.content}
+                    </div>
+                    <button class = "comment__delete__button">
+                      <i class = "far fa-trash-alt"></i>
+                    </button>
                   </div>
                 </div>`
     return html;
@@ -32,6 +37,22 @@ $(function(){
       $('.comment__contents').append(comment_html);
       $('.comment__form').val("");
       $('.comment__post__button').prop("disabled", false);
+    })
+  })
+   
+
+  $(document).on('click', '.comment__delete__button', function(){
+    var comment_data_id = $(this).parent().parent().data("comment-id")
+    console.log(comment_data_id)
+    var url = "/events/" + gon.event.id + "/set_lists/" + gon.set_list.id + "/comments/" + comment_data_id
+    $.ajax({
+      url: url,
+      type: "DELETE",
+      data: comment_data_id,
+      datatype: "json"
+    })
+    .done(function(comment_id){
+      $('[data-comment-id = '+ comment_id + ']').remove();
     })
   })
 })

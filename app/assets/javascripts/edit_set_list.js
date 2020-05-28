@@ -1,22 +1,20 @@
 $(function(){
-  $(".post__button").on("click", function(){
-    $('.error_messages_box').empty();
-    var form_data = document.forms.new_set_list
-    console.log(form_data);
-    var formData = new FormData(form_data)
-    var url = "/events/" + gon.event.id + "/set_lists"
+  $(".edit__button").on("click", function(){
+    var form_data = document.forms.edit_set_list
+    var formData = new FormData(form_data);
+    var url = "/events/" + gon.event.id + "/set_lists/" + gon.set_list.id
     $.ajax({
       url: url,
-      type: "POST",
       data: formData,
-      dataType: 'json',
+      dataType: "json",
+      type: "PATCH",
       contentType: false,
       processData: false
     })
     .done(function(error_messages){
-      var error_num = Object.keys(error_messages)
+      var error_num = Object.keys(error_messages).length
       if (error_num == 0){
-        window.location.href = `/events/${gon.event.id}/choise_artist`;
+        window.location.href = `/events/${gon.event.id}/set_lists/${gon.set_list.id}`
       }
       else{
         error_messages.forEach(function(error_message){

@@ -1,13 +1,16 @@
 class SetListsController < ApplicationController
-
+  
+  before_action :set_parameter, only: ["show", "edit", "update", "destroy"]
+  
   def new
     @set_list = SetList.new
-    @event = Event.find(params[:id])
+    @event = Event.find(params[:event_id])
     gon.event = @event
   end
 
   def create
     @set_list = SetList.new(set_list_params)
+    @set_list.user_id = current_user.id
     respond_to do |format|
       if @set_list.valid?
         @set_list.save
@@ -20,10 +23,37 @@ class SetListsController < ApplicationController
   end
 
   def show
-    @event = Event.find(params[:id])
-    @set_list = SetList.find(params[:id])
     @comment = Comment.new
     @comments = @set_list.comments
+    gon.event = @event
+    gon.set_list = @set_list
+  end
+
+  def destroy
+    @set_list.destroy
+    redirect_to choise_artist_event_path(@event)
+  end
+
+  def edit
+    gon.set_list = @set_list
+    gon.event = @event
+  end
+
+  def update
+    respond_to do |format|
+      if @set_list.update(set_list_params)
+        @set_list.valid?
+        format.html { redirect_to :back }
+        format.json { render json: @set_list.errors.full_messages }
+      else
+        format.json { render json: @set_list.errors.full_messages }
+      end
+    end
+  end
+
+  def set_parameter
+    @set_list = SetList.find(params[:id])
+    @event = Event.find(params[:event_id])
   end
 
   private

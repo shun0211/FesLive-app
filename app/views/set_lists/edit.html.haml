@@ -1,16 +1,16 @@
 = render partial: "shared/header"
 
-.new__set_list__post__contents
-  .new__set_list__post__header
-    .new__set_list__post__header__title
-      セットリスト投稿画面
-    .new__set_list__post__header__event_name
+.edit__set_list__post__contents
+  .edit__set_list__post__header
+    .edit__set_list__post__header__title
+      セットリスト編集画面
+    .edit__set_list__post__header__event_name
       = @event.event_name
-    .new__set_list__post__header__explanation
-      以下にアーティスト名と曲名を記載下さい
+    .edit__set_list__post__header__explanation
+      入力済みのアーティスト名と曲名を編集下さい
 
-  .new__set_list__post__form
-    = form_for [@event, @set_list], html: { name: "new_set_list" } do |f|
+  .edit__set_list__post__form
+    = form_for [@event, @set_list], html: { name: "edit_set_list" } do |f|
       .error_messages_box
       .post__artist__form
         .post__artist__form__title
@@ -73,8 +73,8 @@
           .set_list__form__tenth__box
             = f.text_field :tenth_song, placeholder: "１０曲目を記入して下さい", class: "tenth_song__form"
       .set_list__post__button
-        %button.post__button{ type: "button" }
-          投稿する
+        %button.edit__button{ type: "button" }
+          編集する
       = f.hidden_field :event_id, value: @event.id
 
 = render partial: "shared/footer"

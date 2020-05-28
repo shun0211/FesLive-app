@@ -4,8 +4,8 @@ class EventsController < ApplicationController
   end
   
   def choise_artist
-    @set_lists = SetList.all
     @event = Event.find(params[:id])
+    @set_lists = @event.set_lists
   end
   
 end

@@ -8,7 +8,7 @@
   .main__content{
     display: flex;
     .left__box{
-      width: 22%;
+      width: 17%;
       position: relative;
       .contributor__box{
         position: absolute;
@@ -54,6 +54,10 @@
             }
           }
         }
+        .like__box{
+          display: flex;
+          color: #FF82B2;
+        }
         .twitter__box{
           color: #4689FF;
           padding-left: 10px;
@@ -61,8 +65,7 @@
       }
     }
     .posted__set_list{
-      margin-right: 20%;
-      width: 80%;
+      width: 66%;
       padding: 20px 0 20px;
       .posted__set_list__title{
         padding-bottom: 20px;
@@ -96,6 +99,37 @@
         }
       }
     }
+    .right__box{
+      width: 17%;
+      position: relative;
+      &__button__box{
+        width: 100px;
+        position: absolute;
+        bottom: 10px;
+        left: 0px;
+        display: flex;
+        font-size: 13px;
+        .edit__button{
+          color: #5d627b;
+          text-decoration: none;
+          width: 50%;
+          height: 20px;
+          box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22);
+          border-radius: 5px;
+          background-color: white;
+        }
+        .delete__button{
+          color: #5d627b;
+          text-decoration: none;
+          margin-left: 5px;
+          width: 50%;
+          height: 20px;
+          border-radius: 5px;
+          background-color: white;
+          box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22);
+        }
+      }
+    }
   }
   .comment__box{
     margin: 15px 15% 0;
@@ -119,9 +153,24 @@
             padding-left: 10px;
           }
         }
-        &__content{
-          text-align: left;
-          padding-top: 15px
+        &__box{
+          display: flex;
+          position: relative;
+          .comment__posted__content{
+            text-align: left;
+            padding-top: 15px
+          }
+          .comment__delete__button{
+            color: #808080;
+            text-decoration: none;
+            margin-top: 15px;
+            position: absolute;
+            right: 0;
+            background-color: white;
+            border: none;
+            cursor: pointer;
+
+          }
         }
       }
     }

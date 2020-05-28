@@ -61,8 +61,12 @@
     border: 1px solid;
     border-color: #1F1F1F;
     font-weight: bold;
+    cursor: pointer;
     &__guide{
       font-size: 13px;
     }
+  }
+  .set_list__button:focus{
+    outline: 0;
   }
 }
