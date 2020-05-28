@@ -1,0 +1,36 @@
+= render partial: "shared/header"
+
+.choise_artist__page__container
+  .choise_artist__page__header
+    .choise_artist__page__header__title
+      = @event.event_name
+    .choise_artist__page__header__explanation
+      見たいアーティストのセットリストを選択して下さい
+  .choise_artist__box
+    .left__box
+      - @set_lists.each_with_index do |set_list, i|
+        - if i % 2 == 0
+          .artist__box
+            = link_to event_set_list_path(@event, set_list), class: "artist__box__content", method: :get do
+              = set_list.artist
+              %br
+                のセットリストを見る
+  
+    .right__box
+      - @set_lists.each_with_index do |set_list, i|
+        - unless i % 2 == 0
+          .artist__box
+            = link_to event_set_list_path(@event, set_list), class: "artist__box__content", method: :get do
+              = set_list.artist
+              %br
+                のセットリストを見る
+    
+  .set_list__post
+    .set_list__post__explanation
+      セットリストを投稿する方はこちら
+    .set_list__post__button__box
+      -# new_set_list_pathの引数は@eventでも@event.idでもどっちでもいい
+      = link_to new_event_set_list_path(@event.id), class: "set_list__post__button" do
+        セットリストを投稿する
+
+= render partial: "shared/footer"

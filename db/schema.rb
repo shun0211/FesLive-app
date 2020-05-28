@@ -10,7 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200513105215) do
+ActiveRecord::Schema.define(version: 20200526051913) do
+
+  create_table "comments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "content"
+    t.integer  "user_id"
+    t.integer  "set_list_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["set_list_id"], name: "index_comments_on_set_list_id", using: :btree
+    t.index ["user_id"], name: "index_comments_on_user_id", using: :btree
+  end
 
   create_table "events", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "event_name"
@@ -20,6 +30,15 @@ ActiveRecord::Schema.define(version: 20200513105215) do
     t.string   "event_place"
     t.datetime "created_at",        null: false
     t.datetime "updated_at",        null: false
+  end
+
+  create_table "likes", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "user_id"
+    t.integer  "set_list_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["set_list_id"], name: "index_likes_on_set_list_id", using: :btree
+    t.index ["user_id"], name: "index_likes_on_user_id", using: :btree
   end
 
   create_table "set_lists", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -37,7 +56,9 @@ ActiveRecord::Schema.define(version: 20200513105215) do
     t.string   "tenth_song"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
+    t.integer  "user_id"
     t.index ["event_id"], name: "index_set_lists_on_event_id", using: :btree
+    t.index ["user_id"], name: "index_set_lists_on_user_id", using: :btree
   end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -53,4 +74,9 @@ ActiveRecord::Schema.define(version: 20200513105215) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
+  add_foreign_key "comments", "set_lists"
+  add_foreign_key "comments", "users"
+  add_foreign_key "likes", "set_lists"
+  add_foreign_key "likes", "users"
+  add_foreign_key "set_lists", "users"
 end

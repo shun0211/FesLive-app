@@ -1,0 +1,102 @@
+.choise_artist__page__container{
+  background-color: #f1f1f1;
+  text-align: center;
+  font-size: 15px;
+  font-family: "Avenir Next", Verdana, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "游ゴシック", "Yu Gothic", "メイリオ", Meiryo, Osaka, sans-serif;
+  .choise_artist__page__header{
+    &__title{
+      font-size: 35px;
+      padding: 15px 0 15px;
+    }
+    &__explanation{
+      width: 70%;
+      margin: 0 auto;
+      padding-bottom: 15px;
+      border-bottom: 1px solid #555555;
+    }
+  }
+  .choise_artist__box{
+    display: flex;
+    margin: 10px 20% 0;
+    .left__box{
+      width: 50%;
+      padding-top: 20px;
+      .artist__box{
+        display: flex;
+        justify-content: center;
+        &__content{
+          width: 80%;
+          height: 80px;
+          border: 1px solid black;
+          margin: 0 0 25px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background: white;
+          border-left: solid 6px #5bb7ae;
+          box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.33);
+          text-decoration: none;
+          color: black;
+          border-radius: 5px;
+          cursor: pointer;
+        }
+        &__content:hover{
+          opacity: 0.8
+        }
+      }
+    }
+    .right__box{
+      width: 50%;
+      padding-top: 20px;
+      .artist__box{
+        display: flex;
+        justify-content: center;
+        &__content{
+          width: 80%;
+          height: 80px;
+          border: 1px solid;
+          margin: 0 0 25px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background: white;
+          border-left: solid 6px #5bb7ae;
+          box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.33);
+          text-decoration: none;
+          color: black;
+          border-radius: 5px;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+  .set_list__post{
+    &__explanation{
+      width: 70%;
+      margin: 0 auto;
+      padding-bottom: 15px;
+      border-bottom: 1px solid #555555;
+    }
+    &__button__box{
+      display: flex;
+      justify-content: center;
+
+      .set_list__post__button{
+        cursor: pointer;
+        width: 250px;
+        height: 50px;
+        margin: 20px 0 20px;
+        font-size: 17px;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        border-radius: 5px;
+        background-color: white;
+        color: black;
+        text-decoration: none;
+        border: 1px solid;
+        line-height: 50px;
+      }
+    }
+  }
+}

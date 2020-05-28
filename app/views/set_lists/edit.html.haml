@@ -1,0 +1,80 @@
+= render partial: "shared/header"
+
+.edit__set_list__post__contents
+  .edit__set_list__post__header
+    .edit__set_list__post__header__title
+      セットリスト編集画面
+    .edit__set_list__post__header__event_name
+      = @event.event_name
+    .edit__set_list__post__header__explanation
+      入力済みのアーティスト名と曲名を編集下さい
+
+  .edit__set_list__post__form
+    = form_for [@event, @set_list], html: { name: "edit_set_list" } do |f|
+      .error_messages_box
+      .post__artist__form
+        .post__artist__form__title
+          アーティスト名
+          %span.required
+            必須
+        .post__artist__form__box
+          = f.text_field :artist, placeholder: "投稿するアーティスト名を入力して下さい", class: "artist__form"
+      .set_list__form
+        .set_list__form__first
+          .set_list__form__first__title
+            １曲目
+            %span.required
+              必須
+          .set_list__form__first__box
+            = f.text_field :first_song, placeholder: "１曲目を記入して下さい", class: "first_song__form"
+        .set_list__form__second
+          .set_list__form__second__title
+            ２曲目
+          .set_list__form__second__box
+            = f.text_field :second_song, placeholder: "２曲目を記入して下さい", class: "second_song__form"
+        .set_list__form__third
+          .set_list__form__third__title
+            ３曲目
+          .set_list__form__third__box
+            = f.text_field :third_song, placeholder: "３曲目を記入して下さい", class: "third_song__form"
+        .set_list__form__fourth
+          .set_list__form__fourth__title
+            ４曲目
+          .set_list__form__fourth__box
+            = f.text_field :fourth_song, placeholder: "４曲目を記入して下さい", class: "fourth_song__form"
+        .set_list__form__fifth
+          .set_list__form__fifth__title
+            ５曲目
+          .set_list__form__fifth__box
+            = f.text_field :fifth_song, placeholder: "５曲目を記入して下さい", class: "fifth_song__form"
+        .set_list__form__sixth
+          .set_list__form__sixth__title
+            ６曲目
+          .set_list__form__sixth__box
+            = f.text_field :sixth_song, placeholder: "６曲目を記入して下さい", class: "sixth_song__form"
+        .set_list__form__seventh
+          .set_list__form__seventh__title
+            ７曲目
+          .set_list__form__seventh__box
+            = f.text_field :seventh_song, placeholder: "７曲目を記入して下さい", class: "seventh_song__form"
+        .set_list__form__eighth
+          .set_list__form__eighth__title
+            ８曲目
+          .set_list__form__eighth__box
+            = f.text_field :eighth_song, placeholder: "８曲目を記入して下さい", class: "eighth_song__form"
+        .set_list__form__ninth
+          .set_list__form__ninth__title
+            ９曲目
+          .set_list__form__ninth__box
+            = f.text_field :ninth_song, placeholder: "９曲目を記入して下さい", class: "ninth_song__form"
+        .set_list__form__tenth
+          .set_list__form__tenth__title
+            １０曲目
+          .set_list__form__tenth__box
+            = f.text_field :tenth_song, placeholder: "１０曲目を記入して下さい", class: "tenth_song__form"
+      .set_list__post__button
+        %button.edit__button{ type: "button" }
+          編集する
+      = f.hidden_field :event_id, value: @event.id
+
+= render partial: "shared/footer"

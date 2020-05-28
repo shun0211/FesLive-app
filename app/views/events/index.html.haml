@@ -1,0 +1,25 @@
+= render partial: "shared/header"
+
+.main__container
+  .explanation__box
+    .set_list__post__title
+      セットリストを投稿する
+    .set_list__post__explanation
+      投稿する公演を選んで下さい
+  .listing__box
+    %ul.event__list
+      - @events.each do |event|
+        %li.event__box
+          .event__left__box
+            = link_to choise_artist_event_path(event.id), class: "event_image" do
+              = image_tag "#{event.event_image}"
+          .event__right__box
+            = link_to choise_artist_event_path(event.id), class: "event__name" do
+              = event.event_name
+            .performing_artist
+              .performing_artist__explanation
+                主な出演アーティスト
+              .performing_artist__contents
+                = event.performing_artist
+    
+= render partial: "shared/footer"
