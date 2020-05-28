@@ -1,3 +1,3 @@
-table_names = %w(
-  events
-)
+yonfes = Event.create(event_name: "YON FES 2020", event_day: "4月4日、5日", performing_artist: "04limited sazabys, go!go!vanillas, SUPER BEAVER and more...", event_image: open("#{Rails.root}/app/assets/images/yonfes_logo.jpg"), event_place: "愛知県長久手市")
+metrock = Event.create(event_name: "METROCK 2020", event_day: "5月16日、17日（大阪）5月24日、25日（東京）", performing_artist: "WANIMA、[Alexandros]、BiSH and more...", event_image: open("#{Rails.root}/app/assets/images/metrock_logo.jpg"), event_place: "大阪市堺市、東京都江東区")
+merry_rock_fes = Event.create(event_name: "MERRY ROCK PARADE 2019", event_day: "12月21日、22日", performing_artist: "[Alexandros]、sumika、フレデリック", event_image: open("#{Rails.root}/app/assets/images/merry_rock_parade_logo.png"), event_place: "愛知県名古屋市")
