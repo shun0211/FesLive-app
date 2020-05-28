@@ -1,3 +1,3 @@
 table_names = %w(
-  event
+  events
 )
