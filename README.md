@@ -1,24 +1,22 @@
-# README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
+# Name
+ROCK LOVE HOUSE
 
-* Ruby version
+# Description
+音楽イベントでの体験の共有をサポートするアプリです。
+具体的には音楽イベントでのセットリスト（アーティストが演奏した曲順）を投稿することができ、それを見ることができます。
+将来的には、InstagramやTwitterに投稿するのを助けるイベントごとの画像投稿機能や、行けなくなったイベントチケットの取引が定価でできる機能を付ける予定です。
 
-* System dependencies
+# Usage
+[ROCK LOVE HOUSE](18.176.181.203)のアドレスへ飛びます。
 
-* Configuration
 
-* Database creation
 
-* Database initialization
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+アプリ名
+説明（何が出来る物なのか）
+使い方
+構築やインストール方法
+ライセンス
+作者
