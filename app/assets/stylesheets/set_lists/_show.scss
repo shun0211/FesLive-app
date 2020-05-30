@@ -42,15 +42,16 @@
         background-color: white;
         border-radius: 5px;
         box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22);
-        a{
-          text-decoration: none;
-          
-          .like__box{
-            display: flex;
-            color: #FF82B2	;
-            .heart__mark__registered{
-            }
-            .like__number{
+        .like__button{
+          a{
+            text-decoration: none;
+            .like__box{
+              display: flex;
+              color: #FF82B2	;
+              .heart__mark__registered{
+              }
+              .like__number{
+              }
             }
           }
         }
