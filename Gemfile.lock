@@ -85,6 +85,10 @@ GEM
       railties (>= 4.1.0)
       responders
       warden (~> 1.2.3)
+    dotenv (2.7.5)
+    dotenv-rails (2.7.5)
+      dotenv (= 2.7.5)
+      railties (>= 3.2, < 6.1)
     erubis (2.7.0)
     execjs (2.7.0)
     ffi (1.12.2)
@@ -106,6 +110,7 @@ GEM
       haml (>= 4.0.6, < 6.0)
       html2haml (>= 1.0.1)
       railties (>= 4.0.1)
+    hashie (4.1.0)
     html2haml (2.2.0)
       erubis (~> 2.7.0)
       haml (>= 4.0, < 6)
@@ -145,6 +150,16 @@ GEM
     nio4r (2.5.2)
     nokogiri (1.10.9)
       mini_portile2 (~> 2.4.0)
+    oauth (0.5.4)
+    omniauth (1.9.1)
+      hashie (>= 3.4.6)
+      rack (>= 1.6.2, < 3)
+    omniauth-oauth (1.1.0)
+      oauth
+      omniauth (~> 1.0)
+    omniauth-twitter (1.4.0)
+      omniauth-oauth (~> 1.1)
+      rack
     orm_adapter (0.5.0)
     pry (0.13.1)
       coderay (~> 1.1)
@@ -259,6 +274,7 @@ DEPENDENCIES
   carrierwave (~> 2.0)
   coffee-rails (~> 4.2)
   devise
+  dotenv-rails
   font-awesome-sass
   gon
   haml-rails
@@ -267,6 +283,8 @@ DEPENDENCIES
   listen (~> 3.0.5)
   mini_magick
   mysql2 (>= 0.3.18, < 0.6.0)
+  omniauth
+  omniauth-twitter
   pry-rails
   puma (~> 3.0)
   rails (~> 5.0.7, >= 5.0.7.2)
