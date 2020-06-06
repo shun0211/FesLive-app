@@ -49,6 +49,11 @@
           border-radius: 5px;
         }
       }
+      .email__error__messages{
+        font-size: 14px;
+        color: red;
+        padding-bottom: 10px;
+      }
       .input__form__password{
         height: 40px;
         width: 100%;
@@ -62,6 +67,15 @@
           appearance: none;
           border-radius: 5px;
         }
+        .field_with_errors{
+          height: 100%;
+          width: 100%;
+        }
+      }
+      .password__error__messages{
+        font-size: 14px;
+        color: red;
+        padding-bottom: 10px;
       }
       .login__button{
         -webkit-appearance: none;

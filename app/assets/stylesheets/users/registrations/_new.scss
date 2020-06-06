@@ -41,7 +41,16 @@
             appearance: none;
             border-radius: 5px;
           }
+          .field_with_errors{
+            height: 100%;
+            width: 100%;
+          }
         }
+      }
+      .nickname__error__messages{
+        font-size: 14px;
+        color: red;
+        padding-bottom: 10px;
       }
       .input__form__email{
         &__title{
@@ -64,7 +73,16 @@
             appearance: none;
             border-radius: 5px;
           }
+          .field_with_errors{
+            height: 100%;
+            width: 100%;
+          }
         }
+      }
+      .email__error__messages{
+        font-size: 14px;
+        color: red;
+        padding-bottom: 10px;
       }
       .input__form__password{
         &__title{
@@ -87,7 +105,16 @@
             appearance: none;
             border-radius: 5px;
           }
+          .field_with_errors{
+            height: 100%;
+            width: 100%;
+          }
         }
+      }
+      .password__error__messages{
+        font-size: 14px;
+        color: red;
+        padding-bottom: 10px;
       }
       .input__form__password_conformation{
         &__title{

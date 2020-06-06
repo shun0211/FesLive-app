@@ -14,8 +14,10 @@
           %span
             新規ご登録画面
     = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+      - flash.each do |key, value|
+        = content_tag :div, value, class: key
       .input__form__email
-        = f.email_field :email, placeholder: "ご登録頂いたメールアドレス", class: "email__form"
+        = f.text_field :email, placeholder: "ご登録頂いたメールアドレス", class: "email__form"
       .input__form__password
         = f.text_field :password, placeholder: "パスワード", class: "password__form"
       .login__button

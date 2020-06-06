@@ -1,5 +1,5 @@
 - if user_signed_in?
-  - if @set_list.liked_by?(current_user)
+  - if set_list.liked_by?(current_user)
     = link_to event_set_list_likes_path(event, set_list), method: :delete, remote: true do
       .like__box
         .heart__mark__unregistered

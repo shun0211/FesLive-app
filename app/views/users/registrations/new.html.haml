@@ -15,6 +15,12 @@
             必須
         .input__form__nickname__form
           = f.text_field :nickname, placeholder: "タロウ", class: "nickname__form"
+      - if resource.errors.include?(:nickname)
+        %ul.nickname__error__messages
+          - resource.errors.full_messages_for(:nickname).each do |error_message|
+            %li
+              = error_message
+
       .input__form__email
         .input__form__email__title
           メールアドレス
@@ -22,13 +28,24 @@
             必須
         .input__form__email__form
           = f.email_field :email, placeholder: "xxx@example.jp", class: "email__form"
+      - if resource.errors.include?(:email)
+        %ul.email__error__messages
+          - resource.errors.full_messages_for(:email).each do |error_message|
+            %li
+              = error_message
+
       .input__form__password
         .input__form__password__title
           パスワード
           %span.required
             必須
         .input__form__password__form
-          = f.text_field :password, placeholder: "6文字以上入力してください", class: "password__form"
+          = f.text_field :password, placeholder: "8文字以上入力してください", class: "password__form"
+      - if resource.errors.include?(:password)
+        %ul.password__error__messages
+          - resource.errors.full_messages_for(:password).each do |error_message|
+            %li
+              = error_message
       .input__form__password_conformation
         .input__form__password_conformation__title
           パスワード（確認）
@@ -38,6 +55,5 @@
           = f.text_field :password_confirmation, placeholder: "もう一度パスワードを入力して下さい", class: "password_conformation__form"
       .new_user_registration__button
         = f.submit "登録する", class: "registration__button"
-    = render "devise/shared/error_messages", resource: resource
 
 = render partial: "shared/footer"

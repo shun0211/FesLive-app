@@ -6,4 +6,11 @@ ja:
       set_list:
         artist: アーティスト名
         first_song: 一曲目
-        
+  
+    models:
+      user: ユーザー
+    attributes:
+      user:
+        nickname: ニックネーム
+        email: メールアドレス
+        password: パスワード
