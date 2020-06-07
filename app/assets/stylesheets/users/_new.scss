@@ -1,0 +1,83 @@
+.new_user_registration__method__choice__screen{
+  font-family: "Avenir Next", Verdana, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "游ゴシック", "Yu Gothic", "メイリオ", Meiryo, Osaka, sans-serif;
+  background-color: #f5f5f5;
+  &__title{
+    text-align: center;
+    &__explanation{
+      font-size: 25px;
+    }
+    &__attention{
+      font-size: 15px;
+      padding: 15px 0 15px 0;
+    }
+  }
+  .content{
+    background-color: white;
+    margin: 0 20%;
+    display: flex;
+    justify-content: center;
+    font-size: 15px;
+    padding: 30px 0 40px;
+    .button__box{
+      text-align: center;
+      .email__registration__button{
+        display: block;
+        width: 300px;
+        height: 50px;
+        border-radius: 5px;
+        background-color: #0033FF;
+        color: white;
+        text-decoration: none;
+        line-height: 50px;
+        margin-top: 20px;
+        .fa-envelope{
+          font-size: 25px;
+        }
+      }
+      .twitter__registration__button{
+        display: block;
+        width: 300px;
+        height: 50px;
+        border-radius: 5px;
+        background-color: #3399FF;
+        color: white;
+        text-decoration: none;
+        line-height: 50px;
+        margin-top: 20px;
+        .fa-twitter{
+          font-size: 25px;
+        }
+      }
+      .facebook__registration__button{
+        display: block;
+        width: 300px;
+        height: 50px;
+        border-radius: 5px;
+        background-color: #385185;
+        color: white;
+        text-decoration: none;
+        line-height: 50px;
+        margin-top: 20px;
+        .fa-facebook-square{
+          font-size: 25px;
+        }
+      }
+      .google__registration__button{
+        display: block;
+        width: 300px;
+        height: 50px;
+        border-radius: 5px;
+        background-color: #fff;
+        color: #333;
+        text-decoration: none;
+        line-height: 50px;
+        margin-top: 20px;
+        border: #979797 solid 1px;
+        .fa-google{
+          font-size: 25px;
+        }
+      }
+    }
+  }
+
+}

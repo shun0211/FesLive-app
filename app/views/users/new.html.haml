@@ -1,0 +1,24 @@
+= render partial: "shared/simple_header"
+
+.new_user_registration__method__choice__screen
+  .new_user_registration__method__choice__screen__title
+    .new_user_registration__method__choice__screen__title__explanation
+      メンバー登録
+    .new_user_registration__method__choice__screen__title__attention
+      新規メンバー登録方法を選択して下さい。
+  .content
+    .button__box
+      = link_to new_user_registration_path, class: "email__registration__button" do
+        %i.far.fa-envelope
+        &nbsp;メールアドレスで登録する
+      = link_to  user_twitter_omniauth_authorize_path, class: "twitter__registration__button" do
+        %i.fab.fa-twitter
+        &nbsp;Twitterで登録する
+      = link_to "", class: "facebook__registration__button" do
+        %i.fab.fa-facebook-square
+        &nbsp;facebookで登録する
+      = link_to "", class: "google__registration__button" do
+        %i.fab.fa-google
+        &nbsp;googleで登録する
+
+= render partial: "shared/footer"
