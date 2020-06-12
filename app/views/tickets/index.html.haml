@@ -5,99 +5,49 @@
     .introduction__title
       邦ロックファン全員集合
     .introduction__explanation
-      邦ロック好きのためのまとめアプリ
-  .upcoming
-    .upcoming__fes__title
-      Upcoming Soon...
-    .upcoming__fes__box
-      .upcoming__fes__box__contents
-        .upcoming__fes__box__contents__title
-          .upcoming__fes__box__contents__title__logo
-            = image_tag "rockinjapanlogo.jpg", class: "logo__image"
-          .official_site__link
-            = link_to "公式サイト", "http://rijfes.jp/"
-        .upcoming__fes__box__contents__information
-          開催日：8月9日、10日、11日
-          %br
-          場所  ：茨城県ひたちなか市
-          %br
-          主な出演アーティスト
-          %br
-          サンボマスター、きゃりーぱみゅぱみゅ、緑黄色野菜 and more...
-      .upcoming__fes__box__contents
-        .upcoming__fes__box__contents__title
-          .upcoming__fes__box__contents__title__logo
-            = image_tag "fujirock_logo.png", class: "logo__image"
-          .official_site__link
-            = link_to "公式サイト", "https://www.fujirockfestival.com/"
-        .upcoming__fes__box__contents__information
-          開催日：8月21日、22日、23日
-          %br
-          場所  ：新潟県湯沢町
-          %br
-          主な出演アーティスト
-          %br
-          TAME IMPALA、THE STROKES、Rock’n’Roll FOREVER and more...
-      .upcoming__fes__box__contents
-        .upcoming__fes__box__contents__title
-          .upcoming__fes__box__contents__title__logo
-            = image_tag "sweet_love_shower_logo.jpg", class: "logo__image"
-          .official_site__link
-            = link_to "公式サイト", "https://www.sweetloveshower.com/2020/"
-        .upcoming__fes__box__contents__information
-          開催日：8月28日、29日、30日
-          %br
-          場所  ：山梨県南都留郡
-          %br
-          主な出演アーティスト
-          %br
-          Upcoming Soon...
-  .closed
-    .closed__fes__title
-      開催中、終演したフェス
-    .closed__fes__box
-      .closed__fes__box__contents
-        .closed__fes__box__contents__title
-          .closed__fes__box__contents__title__logo
-            = image_tag "metrock_logo.jpg", class: "logo__image"
-          .official_site__link
-            = link_to "公式サイト", "http://metrock.jp/"
-        .closed__fes__box__contents__information
-          開催日：5月16日、17日（大阪）5月24日、25日（東京）
-          %br
-          場所：大阪府堺市、東京都江東区
-          %br
-          主な出演アーティスト
-          %br
-          WANIMA、[Alexandros]、BiSH and more...
-      .closed__fes__box__contents
-        .closed__fes__box__contents__title
-          .closed__fes__box__contents__title__logo
-            = image_tag "yonfes_logo.jpg", class: "logo__image"
-          .official_site__link
-            = link_to "公式サイト", "https://yonfes.nagoya/2020/"
-        .closed__fes__box__contents__information
-          開催日：4月4日、5日
-          %br
-          場所：愛知県長久手市
-          %br
-          主な出演アーティスト
-          %br
-          04limited sazabys、go!go!vanillas、SUPER BEAVER and more...
-      .closed__fes__box__contents
-        .closed__fes__box__contents__title
-          .closed__fes__box__contents__title__logo
-            = image_tag "merry_rock_parade_logo.png", class: "logo__image"
-          .official_site__link
-            = link_to "公式サイト", "https://www.merryrockparade.jp/"
-        .closed__fes__box__contents__information
-          開催日：12月21日、22日
-          %br
-          場所：愛知県名古屋市
-          %br
-          主な出演アーティスト
-          %br
-          [Alexandros]、sumika、フレデリック and more...
+      Summary application for rock lovers
+    .introduction__leftbox
+    .introduction__backgrand
+  .blank
+    .blank__title.fadeInUp
+      ABOUT
+    .blank__explanation.fadeInUp
+      LOCK LOVE HOUSEでできること
+  .ticket__transfer
+    .ticket__transfer__leftbox
+      = image_tag "concert-768722_1920.jpg", class: "live__image"
+    .ticket__transfer__rightbox
+      .ticket__transfer__rightbox__title.fadeInUp
+        チケット譲渡
+      .ticket__transfer__rightbox__explanation.fadeInUp
+        イベント開催間際でも行けなくなったイベントチケットをSNSアカウントや
+        %br
+        プロフィールを見て譲りたいファンの方に譲渡することができます。
+        %br
+        また、チケットを探している人は定価でチケットを手に入れるチャンスがあります。
+        %br
+        本アプリでは定価の10%以上の価格でのチケット譲渡は行えない仕様になっております。
+      .ticket__transfer__rightbox__button.fadeInUp
+        = link_to "transfer", "#"
+  .share
+    .share__leftbox
+      .share__leftbox__title.fadeInUp
+        セットリスト、画像共有
+      .share__leftbox__explanation.fadeInUp
+        公演したアーティストのセットリストを投稿したり、
+        %br
+        セットリストに対してコメントするなど交流ができます。
+        %br
+        また、SNSに投稿する写真を撮り忘れても心配ありません。
+        %br
+        アプリを通じて画像を保存することができます。
+        %br
+        さらに本アプリはファン同士をつなげることにも役立つでしょう。
+      .share__leftbox__button.fadeInUp
+        = link_to "share", "#"
+    .share__rightbox
+      = image_tag "post_image.jpg", class: "post__image"
+
 .top_footer
   = render partial: "shared/top_footer"
   
