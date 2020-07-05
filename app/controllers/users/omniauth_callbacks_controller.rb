@@ -21,7 +21,6 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   # コールバック時に行う処理
   def callback_from(provider)
     provider = provider.to_s
-    binding.pry
     @user = User.find_for_oauth(request.env['omniauth.auth'])
 
     # persisted?でDBに保存済みかどうか判断

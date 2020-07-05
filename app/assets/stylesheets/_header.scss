@@ -1,74 +1,96 @@
 .header{
+  position: fixed;
+  top: 0px;
+  z-index: 1;
   width: 100%;
-  height: 160px;
+  height: 100px;
+  font-family: 'Libre Baskerville', 'A1 Mincho', serif;
+  color: #2d2d2d;
+  background-color: white;
   &__main{
     display: flex;
     justify-content: center;
-    height: 130px;
+    height: 100px;
+    position: relative;
+    width: 100%;
     &__logo{
-      padding: 15px
+      padding: 15px;
+      position: absolute;
+      left: 0.5%;
+    }
+    .fadeInDown{
+      opacity : 0;
+      transform: translateY(-10px);
+      transition: 1s;
     }
     &__search{
-      line-height: 130px;
-      width: 70%;
-      height: 130px;
+      line-height: 100px;
+      width: 50%;
+      height: 100px;
       display: flex;
       align-items: center;
-      &__form{
+      z-index: 10;
+      .header__main__search__form{
         height: 40px;
-        width: calc(100% - 60px);
-        display: block;
+        width: calc(100% - 40px);
+        display: inline-block;
+        border-bottom: 1px solid #2d2d2d;
+        border-right: none;
+        border-left: none;
+        border-top: none;
+        outline: none;
+        
       }
-      &__button{
-        background-color: #333366;
-        margin-left: 5px;
-        color: white;
+      .header__main__search__button{
+        color: #2d2d2d;
         width: 40px;
         height: 40px;
         display: flex;
         align-items: center;
+        border-bottom: 1px solid #2d2d2d;
         .fa-search{
-          font-size: 20px;
+          font-size: 17px;
           padding-left: 10px; 
         }
       }
     }
-  }
-  .button__nav{
-    display: flex;
-    width: 100%;
-    height: 30px;
-    background-color: #1F1F1F;
-    justify-content: flex-end;
-    font-size: 13px;
-    color: white;
-    line-height: 30px;
-    &__logout{
-      padding-right: 30px;
-      .logout__button{
-        color: white;
-        text-decoration: none;
+    &__button__nav{
+      display: flex;
+      position: absolute;
+      right: 4%;
+      justify-content: flex-end;
+      font-size: 13px;
+      margin-top: 10px;
+      .search__button{
+        font-size: 12px;
+        padding-right: 30px;
+        cursor: pointer;
       }
-    }
-    &__mypage{
-      padding-right: 30px;
-      .mypage__button{
-        color: white;
-        text-decoration: none;
+      .button__nav__logout{
+        padding-right: 30px;
+        .logout__button{
+          color: #2d2d2d;
+          text-decoration: none;
+        }
       }
-    }
-    &__login{
-      padding-right: 30px;
-      .login__button{
-        color: white;
-        text-decoration: none;
+      .button__nav__mypage{
+        .mypage__button{
+          color: #2d2d2d;
+          text-decoration: none;
+        }
       }
-    }
-    &__new_user_registration{
-      padding-right: 30px;
-      .new_user_registration__button{
-        color: white;
-        text-decoration: none;
+      .button__nav__login{
+        padding-right: 30px;
+        .login__button{
+          color: #2d2d2d;
+          text-decoration: none;
+        }
+      }
+      .button__nav__new_user_registration{
+        .new_user_registration__button{
+          color: #2d2d2d;
+          text-decoration: none;
+        }
       }
     }
   }

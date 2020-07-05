@@ -18,4 +18,21 @@ $(function(){
   $(window).scroll(function (){
     animation();
   });
+  $(".search__button").on('click', function(){
+    $(".fadeInDown").css('opacity', '1');
+    $(".fadeInDown").css('transform', 'translateY(0)');
+    $(".header__main__button__nav").css('opacity', '0.1');
+    $(".header__main__logo").css('opacity', '0.1');
+    $(".header__main__search__form").prop('disabled', false)
+  })
+  $(document).on('click', function(e){
+    if($(e.target).is('.fa-search, .header__main__search__form')) {
+    }else{
+      $(".header__main__logo").css('opacity', '1');
+      $(".header__main__button__nav").css('opacity', '1');
+      $(".fadeInDown").css('opacity', '0');
+      $(".fadeInDown").css('transform', 'translateY(-10px)');
+      $(".header__main__search__form").prop('disabled', true);
+    }
+  })
 });
