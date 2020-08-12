@@ -7,6 +7,7 @@ class User < ApplicationRecord
   has_many :likes, dependent: :destroy
   has_many :comments
   has_many :comment_to_images
+  has_many :image_likes
 
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i
   validates :email, presence: true, uniqueness: true, format: { with: VALID_EMAIL_REGEX, message: "を○○@○○.○○の形式で入力して下さい" }, length: { maximum: 255 }

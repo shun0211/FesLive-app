@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200808054724) do
+ActiveRecord::Schema.define(version: 20200812014822) do
 
   create_table "comment_to_images", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "content"
@@ -43,6 +43,15 @@ ActiveRecord::Schema.define(version: 20200808054724) do
     t.date     "event_first_day",   null: false
   end
 
+  create_table "image_likes", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "user_id"
+    t.integer  "image_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["image_id"], name: "index_image_likes_on_image_id", using: :btree
+    t.index ["user_id"], name: "index_image_likes_on_user_id", using: :btree
+  end
+
   create_table "images", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "photograph", null: false
     t.integer  "user_id",    null: false
@@ -58,8 +67,6 @@ ActiveRecord::Schema.define(version: 20200808054724) do
     t.integer  "set_list_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
-    t.integer  "image_id"
-    t.index ["image_id"], name: "index_likes_on_image_id", using: :btree
     t.index ["set_list_id"], name: "index_likes_on_set_list_id", using: :btree
     t.index ["user_id"], name: "index_likes_on_user_id", using: :btree
   end
@@ -103,9 +110,10 @@ ActiveRecord::Schema.define(version: 20200808054724) do
   add_foreign_key "comment_to_images", "users"
   add_foreign_key "comments", "set_lists"
   add_foreign_key "comments", "users"
+  add_foreign_key "image_likes", "images"
+  add_foreign_key "image_likes", "users"
   add_foreign_key "images", "events"
   add_foreign_key "images", "users"
-  add_foreign_key "likes", "images"
   add_foreign_key "likes", "set_lists"
   add_foreign_key "likes", "users"
   add_foreign_key "set_lists", "users"

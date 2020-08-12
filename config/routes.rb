@@ -23,12 +23,7 @@ Rails.application.routes.draw do
 
   resources :images, only: [:index, :new, :create, :show, :edit, :update, :destroy] do
     resources :comment_to_images, only: [:create, :destroy]
-    resource :likes, only: [] do
-      collection do
-        post "image_like_create"
-        delete "image_like_destroy"
-      end
-    end
+    resource :image_likes, only: [:create, :destroy]
   end
 
   root "tickets#index"

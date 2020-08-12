@@ -1,21 +1,21 @@
 - if user_signed_in?
   - if image.liked_by?(current_user)
-    = link_to image_like_destroy_image_likes_path(image), method: :delete, remote: true do
+    = link_to image_image_likes_path(image), method: :delete, remote: true do
       .like__box
         .heart__mark__unregistered
           &#9829
         .like__number
-          = image.likes.count
+          = image.image_likes.count
   - else
-    = link_to image_like_create_image_likes_path(image), method: :post, remote: true do
+    = link_to image_image_likes_path(image), method: :post, remote: true do
       .like__box
         .heart__mark__registered
           &#9829
         .like__number
-          = image.likes.count
+          = image.image_likes.count
 - else
   .like__box
     .heart__mark__registered
       &#9829
     .like__number
-      = image.likes.count
+      = image.image_likes.count

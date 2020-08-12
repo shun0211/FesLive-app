@@ -27,10 +27,11 @@
           - else
             まだ写真が投稿されていません。
         - if event.images.length >= 9
-          .details
-            = event.event_name
-            %br
-              の写真をもっと見る
+          = link_to event_image_event_path(event.id) do
+            .details
+              = event.event_name
+              %br
+                の写真をもっと見る
 
     .and__more
       .and__more__button

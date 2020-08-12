@@ -1,7 +1,7 @@
 class ImagesController < ApplicationController
   def index
     @events = Event.all.order("event_first_day DESC")
-    like_number = Like.group(:image_id).count
+    like_number = ImageLike.group(:image_id).count
     images_sorted = like_number.keys.compact.sort
     # => [2, 4, 1 ...] いいねが多い写真のid順に入っている
     all_images_id = Image.all.ids
