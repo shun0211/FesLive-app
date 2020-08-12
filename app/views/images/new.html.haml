@@ -1,0 +1,22 @@
+= render partial: "shared/header"
+
+.image__post__page
+  .image__post__page__explanation
+    投稿するイベント名を選択し、写真をアップロードしてください。
+  = form_for @image do |f|
+    .event__name
+      .event__name__title
+        イベント名
+      = f.collection_select :event_id, @events, :id, :event_name, {prompt: "イベントを選択してください"}, { class: "event__name__form" }
+    .image__upload
+      .image__upload__title
+        写真
+      .image__upload__field
+        = icon('fas', 'camera')
+      = f.file_field :photograph, :multiple => true, class: "image__form"
+    .new__image__post
+      = button_tag type: "submit", class: "new__image__post__button" do
+        %i.fas.fa-arrow-circle-up
+        UPLOAD
+
+= render partial: "shared/footer"

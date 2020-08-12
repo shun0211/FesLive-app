@@ -1,0 +1,177 @@
+.image__content{
+  font-family: 'Libre Baskerville', 'A1 Mincho', serif;
+  margin-top: 100px;
+  text-align: center;
+  padding-bottom: 30px;
+  .main__content{
+    display: flex;
+    .left__box{
+      width: 17%;
+      position: relative;
+      .contributor__box{
+        position: absolute;
+        top: 40px;
+        right: 0;
+        .contributor__icon__box{
+          height: 100px;
+          width: 100px;
+          background-color: white;
+          margin: 0 auto;
+          border: 1px solid #1f1f1f;
+          .contributor__icon{
+            height: 100%;
+            width: 100%;
+            object-fit: contain;
+          }
+        }
+        .contributor__nickname{
+          font-size: 13px;
+          padding-top: 10px;
+        }
+      }
+      .button__box{
+        display: flex;
+        width: 65px;
+        height: 25px;
+        position: absolute;
+        bottom: 10px;
+        right: 0;
+        justify-content: center;
+        background-color: white;
+        border-radius: 5px;
+        box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22);
+        .like__button{
+          a{
+            text-decoration: none;
+            .like__box{
+              display: flex;
+              color: #FF82B2	;
+              .heart__mark__registered{
+              }
+              .like__number{
+              }
+            }
+          }
+        }
+        .like__box{
+          display: flex;
+          color: #FF82B2;
+        }
+        .twitter__box{
+          color: #4689FF;
+          padding-left: 10px;
+        }
+      }
+    }
+    .posted__image{
+      width: 66%;
+      padding: 20px 0 20px;
+      .posted__image__event_name{
+        font-size: 30px;
+        padding: 30px;
+      }
+      .posted__image__content{
+        width: 80%;
+        position: relative;
+        margin: 0 auto;
+      }
+      .posted__image__content::before{
+        padding-top: 100%;
+        content: "";
+        display: block;
+      }
+      img{
+        object-fit: cover;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
+      .download__button__box{
+        padding-top: 30px;
+        .download__button{
+          width: 120px;
+          height: 45px;
+          margin: 0 auto;
+          line-height: 45px;
+          margin: 0 auto;
+          box-shadow: 1px 1px #888888;
+          border: solid 1px #AAAAAA;
+          background-color: #EEEEEE;
+          border-radius: 20px;
+          i{
+            padding-right: 5px;
+          }
+        }
+      }
+    }
+  }
+  .comment__box{
+    margin: 30px 15% 0;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22);
+    .comment__contents{
+      width: 80%;
+      margin: 0 auto;
+      padding-top: 20px;
+      .comment__empty{
+        color: #5d627b;
+      }
+      .comment__posted{
+        padding-bottom: 20px;
+        &__information{
+          display: flex;
+          .comment__user__nickname{
+            font-size: 15px;
+          }
+          .comment__post__time{
+            color: #808080;
+            font-size: 10px;
+            padding-left: 10px;
+          }
+        }
+        &__box{
+          display: flex;
+          position: relative;
+          .comment__posted__content{
+            text-align: left;
+            padding-top: 15px
+          }
+          .image__comment__delete__button{
+            color: #808080;
+            text-decoration: none;
+            margin-top: 15px;
+            position: absolute;
+            right: 0;
+            background-color: white;
+            border: none;
+            cursor: pointer;
+
+          }
+        }
+      }
+    }
+    .comment__form__box{
+      padding: 20px 0 30px;
+      position: relative;
+      margin: 0 10% 0;
+      text-align: left;
+      .comment__form{
+        width: calc(100% - 65px);
+        height: 40px;
+      }
+      .comment__post__button{
+        width: 60px;
+        height: 40px;
+        position: absolute;
+        bottom: 32px;
+        margin-left: 5px;
+        .fa-comment{
+          font-size: 30px;
+        }
+      }
+    }
+  }
+}

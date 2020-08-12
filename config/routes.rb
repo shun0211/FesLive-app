@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  
+
   devise_for :users, controllers: {
     registrations: "users/registrations",
     sessions: "users/sessions",
@@ -10,6 +10,9 @@ Rails.application.routes.draw do
 
   resources :events, only: [:index] do
     member do
+      get "event_image"
+    end
+    member do
       get "choise_artist"
     end
     resources :set_lists, only: [:new, :create, :show, :edit, :update, :destroy] do
@@ -18,5 +21,16 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :images, only: [:index, :new, :create, :show, :edit, :update, :destroy] do
+    resources :comment_to_images, only: [:create, :destroy]
+    resource :likes, only: [] do
+      collection do
+        post "image_like_create"
+        delete "image_like_destroy"
+      end
+    end
+  end
+
   root "tickets#index"
+
 end

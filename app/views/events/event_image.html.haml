@@ -1,0 +1,24 @@
+= render partial: "shared/header"
+
+.image__list__page__every__event
+  .new__image__post
+    = link_to new_image_path, class: "new__image__post__button" do
+      %i.fas.fa-arrow-circle-up
+      UPLOAD
+  .image__contents
+    .image__contents__title
+      PHOTOGRAPHY
+
+    .event__name
+      = @event.event_name
+    .images__box
+      %ul.images__box__view
+        - if @images.any?
+          - @images.each_with_index do |image, i|
+            %li.image__box
+              = image_tag image.photograph.url
+        - else
+          まだ写真が投稿されていません。
+    .page
+      = paginate @images
+= render partial: "shared/footer"

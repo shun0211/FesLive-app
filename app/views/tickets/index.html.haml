@@ -13,41 +13,38 @@
       ABOUT
     .blank__explanation.fadeInUp
       LOCK LOVE HOUSEでできること
-  .ticket__transfer
-    .ticket__transfer__leftbox
+  .set_list__share
+    .set_list__share__leftbox
       = image_tag "concert-768722_1920.jpg", class: "live__image"
-    .ticket__transfer__rightbox
-      .ticket__transfer__rightbox__title.fadeInUp
-        チケット譲渡
-      .ticket__transfer__rightbox__explanation.fadeInUp
-        イベント開催間際でも行けなくなったイベントチケットをSNSアカウントや
-        %br
-        プロフィールを見て譲りたいファンの方に譲渡することができます。
-        %br
-        また、チケットを探している人は定価でチケットを手に入れるチャンスがあります。
-        %br
-        本アプリでは定価の10%以上の価格でのチケット譲渡は行えない仕様になっております。
-      .ticket__transfer__rightbox__button.fadeInUp
-        = link_to "transfer", "#"
-  .share
-    .share__leftbox
-      .share__leftbox__title.fadeInUp
-        セットリスト、画像共有
-      .share__leftbox__explanation.fadeInUp
+    .set_list__share__rightbox
+      .set_list__share__rightbox__title.fadeInUp
+        セットリスト共有
+      .set_list__share__rightbox__explanation.fadeInUp
         公演したアーティストのセットリストを投稿したり、
         %br
-        セットリストに対してコメントするなど交流ができます。
+        投稿されたセットリストにコメントすることができます。
         %br
-        また、SNSに投稿する写真を撮り忘れても心配ありません。
+        セットリストへの投稿やコメントをきっかけにファン同士が
         %br
-        アプリを通じて画像を保存することができます。
+        お互いのSNSを交換してつながることができます。
+      .set_list__share__rightbox__button.fadeInUp
+        = link_to "share", events_path
+  .image__share
+    .image__share__leftbox
+      .image__share__leftbox__title.fadeInUp
+        写真の共有
+      .image__share__leftbox__explanation.fadeInUp
+        思い出の写真を取り忘れたり、家で見返してみると
         %br
-        さらに本アプリはファン同士をつなげることにも役立つでしょう。
-      .share__leftbox__button.fadeInUp
-        = link_to "share", "#"
-    .share__rightbox
+        残念な写真であったとしても心配ありません。
+        %br
+        アプリを通じて写真をみんなで共有することができます。
+        %br
+        思い出の写真をInstagramに投稿することができるでしょう。
+      .image__share__leftbox__button.fadeInUp
+        = link_to "share", images_path
+    .image__share__rightbox
       = image_tag "post_image.jpg", class: "post__image"
 
 .top_footer
-  = render partial: "shared/top_footer"
-  
+  = render partial: "shared/footer"

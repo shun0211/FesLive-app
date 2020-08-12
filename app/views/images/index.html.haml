@@ -1,0 +1,39 @@
+= render partial: "shared/header"
+
+.image__list__page
+  .new__image__post
+    = link_to new_image_path, class: "new__image__post__button" do
+      %i.fas.fa-arrow-circle-up
+      UPLOAD
+  .image__contents
+    .image__contents__title
+      PHOTOGRAPHY
+    - @events.each do |event|
+      .event__name
+        = link_to event_image_event_path(event.id) do
+          = event.event_name
+      .images__box
+        %ul.images__box__view
+          - if event.images.any?
+            - i = 0
+            - @images.each do |image|
+              - if image.event.id == event.id
+                - i += 1
+                %li.image__box
+                  = link_to image_path(image.id) do
+                    = image_tag image.photograph.url
+                - if i == 8
+                  - break
+          - else
+            まだ写真が投稿されていません。
+        - if event.images.length >= 9
+          .details
+            = event.event_name
+            %br
+              の写真をもっと見る
+
+    .and__more
+      .and__more__button
+        more...
+
+= render partial: "shared/footer"

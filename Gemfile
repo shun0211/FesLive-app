@@ -57,7 +57,7 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
-group :production do 
+group :production do
   gem 'unicorn', '5.4.1'
 end
 
@@ -74,3 +74,4 @@ gem 'omniauth'
 gem 'dotenv-rails'
 gem 'omniauth-facebook'
 gem 'omniauth-google-oauth2'
+gem 'kaminari'

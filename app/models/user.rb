@@ -6,6 +6,7 @@ class User < ApplicationRecord
   has_many :set_lists, dependent: :destroy
   has_many :likes, dependent: :destroy
   has_many :comments
+  has_many :comment_to_images
 
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i
   validates :email, presence: true, uniqueness: true, format: { with: VALID_EMAIL_REGEX, message: "を○○@○○.○○の形式で入力して下さい" }, length: { maximum: 255 }
@@ -17,7 +18,7 @@ class User < ApplicationRecord
   def self.find_for_oauth(user_data)
     # usersテーブルの中から指定したuidとproviderの組み合わせを持つユーザーを探す
     user = User.find_by(uid: user_data.uid, provider: user_data.provider)
-    
+
     # 変数の中身がnilの場合、右辺のメソッドを実行する
     user ||= User.create!(
       uid: user_data.uid,
@@ -35,5 +36,5 @@ class User < ApplicationRecord
   def self.dummy_email(user_data)
     "#{Time.now.strftime('%Y%m%d%H%M%S').to_i}-#{user_data.uid}-#{user_data.provider}@example.com"
   end
-  
+
 end

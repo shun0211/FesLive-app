@@ -3,8 +3,9 @@
   width: 100%;
   font-family: "Avenir Next", Verdana, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "游ゴシック", "Yu Gothic", "メイリオ", Meiryo, Osaka, sans-serif;
   font-size: 15px;
-  background-color: #EEEEEE;
+  background-color: white;
   padding-bottom: 30px;
+  margin-top: 100px;
   .main__content{
     display: flex;
     .left__box{
@@ -79,7 +80,7 @@
       }
       .posted__set_list__contents{
         .song{
-          height: 40px;
+          height: 60px;
           font-size: 20px;
           display: flex;
           line-height: 40px;
