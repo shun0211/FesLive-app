@@ -104,6 +104,9 @@
             padding-right: 5px;
           }
         }
+        button:focus{
+          outline: 0;
+        }
       }
     }
   }

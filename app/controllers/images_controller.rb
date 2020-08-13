@@ -30,6 +30,20 @@ class ImagesController < ApplicationController
     gon.image = @image
   end
 
+  def download
+    @image = Image.find(params[:id])
+    @event = Event.find(@image.event_id)
+    file_name = @event.event_name + "_photograph_" + @image.id.to_s
+    # 次の行の記述でURLを記載できたので不採用
+    # file_path = Rails.root.join('public', 'uploads', 'image', 'photograph', "#{@image.id}", "#{@image.photograph}")
+    file_path = @image.photograph.file.file
+    send_file(file_path,
+    filename: file_name,
+    type: 'application/octet-stream',
+    disposition: 'attachment'
+    )
+
+  end
 
   private
   def image_params

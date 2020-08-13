@@ -16,7 +16,8 @@
         - if @images.any?
           - @images.each_with_index do |image, i|
             %li.image__box
-              = image_tag image.photograph.url
+              = link_to image_path(image.id) do
+                = image_tag image.photograph.url
         - else
           まだ写真が投稿されていません。
     .page

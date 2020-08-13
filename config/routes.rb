@@ -24,6 +24,9 @@ Rails.application.routes.draw do
   resources :images, only: [:index, :new, :create, :show, :edit, :update, :destroy] do
     resources :comment_to_images, only: [:create, :destroy]
     resource :image_likes, only: [:create, :destroy]
+    member do
+      get "download"
+    end
   end
 
   root "tickets#index"

@@ -19,7 +19,7 @@
       .posted__image__content
         = image_tag @image.photograph.url
       .download__button__box
-        .download__button
+        = button_to download_image_path(@image.id), method: :get, class: "download__button" do
           %i.fas.fa-arrow-down
           Download
   .comment__box
@@ -39,7 +39,7 @@
               .comment__posted__content
                 = comment.content
               - if user_signed_in? && current_user.id == comment.user_id
-                %button.comment__delete__button
+                %button.image__comment__delete__button
                   %i.far.fa-trash-alt
     .comment__form__box
       - if user_signed_in?
