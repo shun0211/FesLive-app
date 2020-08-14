@@ -15,10 +15,14 @@ class ImagesController < ApplicationController
   end
 
   def create
-    params[:image][:photograph].each do |photograph|
-      new_image = Image.new(event_id: params[:image][:event_id], photograph: photograph, user_id: current_user.id)
-      new_image.save
-    end
+    @image = Image.new(image_params)
+    @image.save
+
+    # multipleオプションをfalseにしたため、不採用
+    # params[:image][:photograph].each do |photograph|
+    #   new_image = Image.new(event_id: params[:image][:event_id], photograph: photograph, user_id: current_user.id)
+    #   new_image.save
+    # end
     redirect_to images_path
   end
 
@@ -47,7 +51,7 @@ class ImagesController < ApplicationController
 
   private
   def image_params
-    params.require(:image).permit(:user_id, :event_id, { photograph: [] }).merge(user_id: current_user.id)
+    params.require(:image).permit(:event_id, :photograph).merge(user_id: current_user.id)
   end
 
 end

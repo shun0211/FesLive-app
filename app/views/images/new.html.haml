@@ -11,9 +11,10 @@
     .image__upload
       .image__upload__title
         写真
-      .image__upload__field
-        = icon('fas', 'camera')
-      = f.file_field :photograph, :multiple => true, class: "image__form"
+      .image__upload__field__box
+        .image__upload__field
+          = icon('fas', 'camera')
+      = f.file_field :photograph, class: "image__form", id: "image_photograph_1"
     .new__image__post
       = button_tag type: "submit", class: "new__image__post__button" do
         %i.fas.fa-arrow-circle-up

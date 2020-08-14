@@ -5,6 +5,8 @@ class Image < ApplicationRecord
   mount_uploader :photograph, ImageUploader
   has_many :image_likes
 
+  validates :event_id, :photograph, presence: true
+
   def liked_by?(user)
     image_likes.where(user_id: user.id).exists?
   end
