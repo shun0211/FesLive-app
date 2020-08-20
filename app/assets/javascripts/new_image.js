@@ -10,9 +10,9 @@ $(function(){
     console.log(number);
     // 何枚目のファイルかを示す
     var input_num = $('.event-image').length + 2;
-    var new_image_input = `<input class = "image__form" type = "file" name = "image[photograph]" id = "image_photograph_${input_num}" >`
+    var new_image_input = `<input class = "image__form" type = "file" name = "image[photograph][${input_num}]" id = "image_photograph_${input_num}" >`
     console.log(new_image_input);
-    $('.image__form').after(new_image_input)
+    $(`#image_photograph_${number}`).after(new_image_input)
     // 選択したファイル情報を取得し変数に格納
     var file = $(`#image_photograph_${number}`).prop('files')[0];
     console.log(file);
@@ -42,7 +42,7 @@ $(function(){
       $('.image__upload__field').css('display', 'none');
     }
   })
-  $(document).on("click", ".item-image__operation--delete", function(){
+  $(document).on("click", ".event-image__operation--delete", function(){
     // インプットタグ修正する消すための準備 => input_listの中身は全てのプレビュー画像のカスタムデータ属性
     var input_list = [];
     $('.event-image').each(function(index, image_id){
@@ -54,41 +54,45 @@ $(function(){
     var target_image = $(this).parent().parent();
     target_image.remove();
     // プレビュー画像が4枚以下になった場合、画像選択画面が再び現れる
-    var number = $('.item-image').length;
+    var number = $('.event-image').length;
+    console.log("プレビュー画像の数 =>" + number);
     if (number == 4){
-      $('.exhibition-content__caption--image').css('display', 'block');
+      $('.image__upload__field').css('display', 'block');
     }
+    // uploadフォームの幅を調整
+    var upload_field_width = 100 - 20 * number
+    $('.image__upload__field').css('width', `${upload_field_width}%`)
     // 削除したプレビュー画像のカスタムデータ属性を取得
     var image_id = $(this).parent().parent().data('image_id');
+    console.log("削除する画像のカスタムデータ属性 => " + image_id);
     // 削除したプレビュー画像以外のすべてのプレビュー画像のimage_idを取得
     var image_list = [];
-    $('.item-image').each(function(index, image_id){
+    $('.event-image').each(function(index, image_id){
       var image_id_2 = $(image_id).data('image_id');
       var image_id_2 = $(image_id).attr('data-image_id');
       image_list.push(image_id_2);
     })
+    console.log("削除する画像以外の画像のカスタムデータ属性 => " + image_list);
     $.each(image_list, function(index, image_id_2){
       if (image_id_2 > image_id){
         // プレビュー画像のカスタムデータ属性修正
         $(`#image-${image_id_2}`).attr('data-image_id', function(){return (image_id_2 - 1)});
         $(`#image-${image_id_2}`).data('image_id', function(){return (image_id_2 - 1)});
-        // インプットタグのname属性を修正
-        $(`#item_product_images_attributes_${image_id_2}_image`).attr('name', function(){return "item[product_images_attributes][" + (image_id_2 - 1) + "][image]"})
-        $(`#item_product_images_attributes_${image_id_2}_id`).attr('name', function(){return "item[product_images_attributes][" + (image_id_2 - 1) + "][id]"})
-  //       // インプットタグのid修正
-  //       $(`#item_product_images_attributes_${image_id_2}_image`).attr('id', function(){return "item_product_images_attributes_" + (image_id_2 - 1) + "_image"})
-  //       $(`#item_product_images_attributes_${image_id_2}_id`).attr('id', function(){return "item_product_images_attributes_" + (image_id_2 - 1) + "_id"})
-  //       // プレビュー画像のid修正
-  //       $(`#image-${image_id_2}`).attr('id', function(){return "image-" + (image_id_2 - 1)});
-  //     }
-  //   })
-  //   // インプットタグを削除
-  //   $(`#item_product_images_attributes_${image_id}_image`).remove();
-  //   $(`#item_product_images_attributes_${image_id}_id`).remove();
-  //   // 空のインプットタグを取得
-  //   var input_max = Math.max.apply(null, input_list) + 1;
-  //   // 空のインプットタグのid及びnameを修正
-  //   $(`#item_product_images_attributes_${input_max}_image`).attr('name', function(){return "item[product_images_attributes][" + (input_max - 1) + "][image]"})
-  //   $(`#item_product_images_attributes_${input_max}_image`).attr('id', function(){return "item_product_images_attributes_" + (input_max - 1) + "_image"})
+
+    // ------------------------動作確認済み-------------------------------
+
+        // インプットタグのid修正
+        $(`#image_photograph_${image_id_2}`).attr('id', function(){return `#image_photograph_${(image_id_2 - 1)}`})
+        // プレビュー画像のid修正
+        $(`#image-${image_id_2}`).attr('id', function(){return "image-" + (image_id_2 - 1)});
+      }
+    })
+    // インプットタグを削除
+    $(`#image_photograph_${image_id}`).remove();
+    // 空のインプットタグを取得
+    var input_max = Math.max.apply(null, input_list) + 1;
+    console.log("空のインプットタグのID => " + input_max);
+    // 空のインプットタグのidを修正
+    $(`#image_photograph_${input_max}`).attr('id', function(){return "image_photograph_" + (input_max - 1)})
   })
 })

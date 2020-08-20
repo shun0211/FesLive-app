@@ -3,18 +3,21 @@
 .image__post__page
   .image__post__page__explanation
     投稿するイベント名を選択し、写真をアップロードしてください。
-  = form_for @image do |f|
+  = form_for(@form, url: {controller: 'images', action: 'create' }) do |f|
+
     .event__name
       .event__name__title
         イベント名
-      = f.collection_select :event_id, @events, :id, :event_name, {prompt: "イベントを選択してください"}, { class: "event__name__form" }
+      = f.fields_for :images do |i|
+        = i.collection_select :event_id, @events, :id, :event_name, {prompt: "イベントを選択してください"}, { class: "event__name__form" }
+        = i.file_field :photograph, class: "image__form", id: "image_photograph_1"
     .image__upload
       .image__upload__title
         写真
       .image__upload__field__box
         .image__upload__field
           = icon('fas', 'camera')
-      = f.file_field :photograph, class: "image__form", id: "image_photograph_1"
+      -# = i.file_field :photograph, class: "image__form", id: "image_photograph_1"
     .new__image__post
       = button_tag type: "submit", class: "new__image__post__button" do
         %i.fas.fa-arrow-circle-up

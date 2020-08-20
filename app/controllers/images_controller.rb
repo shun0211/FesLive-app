@@ -11,12 +11,17 @@ class ImagesController < ApplicationController
 
   def new
     @events = Event.all
-    @image = Image.new
+    @form = Form::ImageCollection.new
   end
 
   def create
-    @image = Image.new(image_params)
-    @image.save
+    @form = Form::ImageCollection.new(image_collection_params)
+    @form.images.map do |iamge|
+      if iamge.photograph.present?
+        iamge.user_id = current_user.id
+      end
+    end
+    @form.save
 
     # multipleオプションをfalseにしたため、不採用
     # params[:image][:photograph].each do |photograph|
@@ -50,8 +55,8 @@ class ImagesController < ApplicationController
   end
 
   private
-  def image_params
-    params.require(:image).permit(:event_id, :photograph).merge(user_id: current_user.id)
+  def image_collection_params
+    params.require(:form_image_collection).permit(images_attributes: [:photograph, :event_id, :user_id])
   end
 
 end

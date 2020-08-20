@@ -1,6 +1,6 @@
 class Image < ApplicationRecord
   belongs_to :event
-  belongs_to :user
+  belongs_to :user, optional: true
   has_many :comment_to_images
   mount_uploader :photograph, ImageUploader
   has_many :image_likes

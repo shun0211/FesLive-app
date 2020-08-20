@@ -1,7 +1,7 @@
 class SetListsController < ApplicationController
-  
+
   before_action :set_parameter, only: ["show", "edit", "update", "destroy"]
-  
+
   def new
     @set_list = SetList.new
     @event = Event.find(params[:event_id])
@@ -9,6 +9,7 @@ class SetListsController < ApplicationController
   end
 
   def create
+    binding.pry
     @set_list = SetList.new(set_list_params)
     @set_list.user_id = current_user.id
     respond_to do |format|
